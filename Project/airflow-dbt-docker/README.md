@@ -2,7 +2,7 @@
 ![Architecture](document/Orchestrator.jpg)
 
 ## Project Workflow
-:notebook: ![Documentation](document/airflow-dbt-docker.pdf)
+:notebook: [Documentation](document/airflow-dbt-docker.pdf)
 
 ## Pre-requisites
 1. Build docker image for Airflow
