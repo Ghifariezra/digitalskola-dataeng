@@ -1,4 +1,7 @@
-# Project Workflow
+# Architecture
+![Architecture](document/Orchestrator.jpg)
+
+## Project Workflow
 ![Documentation](document/airflow-dbt-docker.pdf)
 
 ## Pre-requisites
