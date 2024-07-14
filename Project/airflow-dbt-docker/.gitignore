@@ -1,0 +1,6 @@
+.env
+airflow/logs
+**/__pycache__
+airflow/dags/spark
+airflow/dags/elt-spark.py
+airflow/dags/dbt-dag.py

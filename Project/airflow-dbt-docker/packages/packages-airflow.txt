@@ -1,0 +1,8 @@
+pandas
+snowflake-connector-python
+snowflake-connector-python[pandas]
+pyspark
+apache-airflow-providers-snowflake
+apache-airflow-providers-postgres
+apache-airflow-providers-apache-spark
+astronomer-cosmos
