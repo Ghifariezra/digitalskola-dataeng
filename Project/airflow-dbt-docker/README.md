@@ -1,8 +1,5 @@
-# Orchestrator-Airflow-ELT
-![Orchestrator-Airflow-ELT](result/architecture/Architecture.png)
-
-# ERD-Datawarehouse
-![ERD-Conceptual-Model](result/erd/erd-dwh.png)
+# Project Workflow
+![Documentation](document/airflow-dbt-docker.pdf)
 
 ## Pre-requisites
 1. Build docker image for Airflow
@@ -43,6 +40,3 @@ Running Airflow with `docker-compose`
 ```bash
 docker-compose -f ./docker/docker-compose.yml --env-file .env up -d
 ```
-
-# Final-Result
-You can find it in [CHECK-THE-FINAL-RESULT-HERE](result)
