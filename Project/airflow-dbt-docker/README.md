@@ -5,15 +5,15 @@
 :notebook: [Documentation](document/airflow-dbt-docker.pdf)
 
 ## Pre-requisites
-1. Build docker image for Airflow
+1. Build `docker image` for Airflow
 ```bash
 docker build -t dataninja/airflow -f ./docker/Dockerfile.airflow .
 ```
-2. Create networks for Docker
+2. Create `networks` for Docker
 ```bash
 docker network create -d bridge dataninja-networks
 ```
-3. Setup file .env
+3. Setup file `.env`
 ```zsh
 # AIRFLOW ATTRIBUTES
 AIRFLOW_CONTAINER_WEBSERVER=airflow-webserver
