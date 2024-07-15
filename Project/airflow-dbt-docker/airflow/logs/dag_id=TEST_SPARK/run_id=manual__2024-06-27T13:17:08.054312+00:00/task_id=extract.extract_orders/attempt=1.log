@@ -1,0 +1,93 @@
+[2024-06-27T13:17:15.106+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T13:17:15.245+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_orders manual__2024-06-27T13:17:08.054312+00:00 [queued]>
+[2024-06-27T13:17:15.309+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_orders manual__2024-06-27T13:17:08.054312+00:00 [queued]>
+[2024-06-27T13:17:15.311+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-27T13:17:15.625+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_orders> on 2024-06-27 13:17:08.054312+00:00
+[2024-06-27T13:17:15.688+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1871) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T13:17:15.704+0000] {standard_task_runner.py:63} INFO - Started process 1900 to run task
+[2024-06-27T13:17:15.684+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'TEST_SPARK', 'extract.extract_orders', 'manual__2024-06-27T13:17:08.054312+00:00', '--job-id', '395', '--raw', '--subdir', 'DAGS_FOLDER/elt-spark.py', '--cfg-path', '/tmp/tmpap8v00gs']
+[2024-06-27T13:17:15.716+0000] {standard_task_runner.py:91} INFO - Job 395: Subtask extract.extract_orders
+[2024-06-27T13:17:15.809+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T13:17:16.080+0000] {task_command.py:426} INFO - Running <TaskInstance: TEST_SPARK.extract.extract_orders manual__2024-06-27T13:17:08.054312+00:00 [running]> on host airflow-scheduler
+[2024-06-27T13:17:16.748+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='TEST_SPARK' AIRFLOW_CTX_TASK_ID='extract.extract_orders' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T13:17:08.054312+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T13:17:08.054312+00:00'
+[2024-06-27T13:17:16.757+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T13:19:41.322+0000] {logging_mixin.py:188} INFO - +-------+----------+----------+--------------------+--------------------+--------------------+-------+-------+--------------------+--------------------+-----------+-------------+--------------+-----------+
+|orderID|customerID|employeeID|           orderDate|        requiredDate|         shippedDate|shipVia|freight|            shipName|         shipAddress|   shipCity|   shipRegion|shipPostalCode|shipCountry|
++-------+----------+----------+--------------------+--------------------+--------------------+-------+-------+--------------------+--------------------+-----------+-------------+--------------+-----------+
+|  10663|     BONAP|         2|1997-09-10 00:00:...|1997-09-24 00:00:...|1997-10-03 00:00:...|      2| 113.15|            Bon app'| 12 rue des Bouchers|  Marseille|          NaN|         13008|     France|
+|  10664|     FURIB|         1|1997-09-10 00:00:...|1997-10-08 00:00:...|1997-09-19 00:00:...|      3|   1.27|Furia Bacalhau e ...|Jardim das rosas ...|     Lisboa|          NaN|          1675|   Portugal|
+|  10665|     LONEP|         1|1997-09-11 00:00:...|1997-10-09 00:00:...|1997-09-17 00:00:...|      2|  26.31|Lonesome Pine Res...|  89 Chiaroscuro Rd.|   Portland|           OR|         97219|        USA|
+|  10666|     RICSU|         7|1997-09-12 00:00:...|1997-10-10 00:00:...|1997-09-22 00:00:...|      2| 232.42|  Richter Supermarkt|         Starenweg 5|     Genève|          NaN|          1204|Switzerland|
+|  10667|     ERNSH|         7|1997-09-12 00:00:...|1997-10-10 00:00:...|1997-09-19 00:00:...|      1|  78.09|        Ernst Handel|        Kirchgasse 6|       Graz|          NaN|          8010|    Austria|
+|  10668|     WANDK|         1|1997-09-15 00:00:...|1997-10-13 00:00:...|1997-09-23 00:00:...|      2|  47.22|   Die Wandernde Kuh|   Adenauerallee 900|  Stuttgart|          NaN|         70563|    Germany|
+|  10669|     SIMOB|         2|1997-09-15 00:00:...|1997-10-13 00:00:...|1997-09-22 00:00:...|      1|  24.39|       Simons bistro|        Vinbæltet 34|  Kobenhavn|          NaN|          1734|    Denmark|
+|  10670|     FRANK|         4|1997-09-16 00:00:...|1997-10-14 00:00:...|1997-09-18 00:00:...|      1| 203.48|      Frankenversand|   Berliner Platz 43|    München|          NaN|         80805|    Germany|
+|  10671|     FRANR|         1|1997-09-17 00:00:...|1997-10-15 00:00:...|1997-09-24 00:00:...|      1|  30.34| France restauration|       54 rue Royale|     Nantes|          NaN|         44000|     France|
+|  10672|     BERGS|         9|1997-09-17 00:00:...|1997-10-01 00:00:...|1997-09-26 00:00:...|      2|  95.75|  Berglunds snabbköp|     Berguvsvägen  8|      Luleå|          NaN|      S-958 22|     Sweden|
+|  10673|     WILMK|         2|1997-09-18 00:00:...|1997-10-16 00:00:...|1997-09-19 00:00:...|      1|  22.76|         Wilman Kala|       Keskuskatu 45|   Helsinki|          NaN|         21240|    Finland|
+|  10674|     ISLAT|         4|1997-09-18 00:00:...|1997-10-16 00:00:...|1997-09-30 00:00:...|      2|    0.9|      Island Trading|Garden House Crow...|      Cowes|Isle of Wight|      PO31 7PJ|         UK|
+|  10675|     FRANK|         5|1997-09-19 00:00:...|1997-10-17 00:00:...|1997-09-23 00:00:...|      2|  31.85|      Frankenversand|   Berliner Platz 43|    München|          NaN|         80805|    Germany|
+|  10676|     TORTU|         2|1997-09-22 00:00:...|1997-10-20 00:00:...|1997-09-29 00:00:...|      2|   2.01| Tortuga Restaurante|    Avda. Azteca 123|México D.F.|          NaN|         05033|     Mexico|
+|  10677|     ANTON|         1|1997-09-22 00:00:...|1997-10-20 00:00:...|1997-09-26 00:00:...|      3|   4.03|Antonio Moreno Ta...|     Mataderos  2312|México D.F.|          NaN|         05023|     Mexico|
+|  10678|     SAVEA|         7|1997-09-23 00:00:...|1997-10-21 00:00:...|1997-10-16 00:00:...|      3| 388.98|  Save-a-lot Markets|     187 Suffolk Ln.|      Boise|           ID|         83720|        USA|
+|  10679|     BLONP|         8|1997-09-23 00:00:...|1997-10-21 00:00:...|1997-09-30 00:00:...|      3|  27.94|Blondel père et fils|     24 place Kléber| Strasbourg|          NaN|         67000|     France|
+|  10680|     OLDWO|         1|1997-09-24 00:00:...|1997-10-22 00:00:...|1997-09-26 00:00:...|      1|  26.61|Old World Delicat...|     2743 Bering St.|  Anchorage|           AK|         99508|        USA|
+|  10681|     GREAL|         3|1997-09-25 00:00:...|1997-10-23 00:00:...|1997-09-30 00:00:...|      3|  76.13|Great Lakes Food ...|    2732 Baker Blvd.|     Eugene|           OR|         97403|        USA|
+|  10682|     ANTON|         3|1997-09-25 00:00:...|1997-10-23 00:00:...|1997-10-01 00:00:...|      2|  36.13|Antonio Moreno Ta...|     Mataderos  2312|México D.F.|          NaN|         05023|     Mexico|
++-------+----------+----------+--------------------+--------------------+--------------------+-------+-------+--------------------+--------------------+-----------+-------------+--------------+-----------+
+only showing top 20 rows
+[2024-06-27T13:19:41.358+0000] {logging_mixin.py:188} INFO - None
+[2024-06-27T13:19:41.360+0000] {python.py:237} INFO - Done. Returned value was: DataFrame[orderID: bigint, customerID: string, employeeID: bigint, orderDate: string, requiredDate: string, shippedDate: string, shipVia: bigint, freight: double, shipName: string, shipAddress: string, shipCity: string, shipRegion: string, shipPostalCode: string, shipCountry: string]
+[2024-06-27T13:19:41.825+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T13:19:42.052+0000] {xcom.py:675} ERROR - Object of type DataFrame is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your airflow config or make sure to decorate your object with attr.
+[2024-06-27T13:19:42.071+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 189, in serialize
+    raise TypeError(f"cannot serialize object of type {cls}")
+TypeError: cannot serialize object of type <class 'pyspark.sql.dataframe.DataFrame'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-06-27T13:19:42.310+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=TEST_SPARK, task_id=extract.extract_orders, run_id=manual__2024-06-27T13:17:08.054312+00:00, execution_date=20240627T131708, start_date=20240627T131715, end_date=20240627T131942
+[2024-06-27T13:19:42.675+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 395 for task extract.extract_orders (Object of type DataFrame is not JSON serializable; 1900)
+[2024-06-27T13:19:42.875+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-27T13:19:43.984+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-27T13:19:44.025+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

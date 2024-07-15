@@ -1,0 +1,84 @@
+[2024-06-24T14:12:35.985+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-24T14:12:36.103+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.transform.raw_employee_territories_run manual__2024-06-24T14:11:50.150166+00:00 [queued]>
+[2024-06-24T14:12:36.168+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.transform.raw_employee_territories_run manual__2024-06-24T14:11:50.150166+00:00 [queued]>
+[2024-06-24T14:12:36.169+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-24T14:12:36.291+0000] {taskinstance.py:2330} INFO - Executing <Task(DbtRunLocalOperator): transform.raw_employee_territories_run> on 2024-06-24 14:11:50.150166+00:00
+[2024-06-24T14:12:36.339+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1105) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-24T14:12:36.352+0000] {standard_task_runner.py:63} INFO - Started process 1126 to run task
+[2024-06-24T14:12:36.368+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'transform.raw_employee_territories_run', 'manual__2024-06-24T14:11:50.150166+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmp86gdnrnj']
+[2024-06-24T14:12:36.376+0000] {standard_task_runner.py:91} INFO - Job 151: Subtask transform.raw_employee_territories_run
+[2024-06-24T14:12:36.505+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-24T14:12:36.773+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.transform.raw_employee_territories_run manual__2024-06-24T14:11:50.150166+00:00 [running]> on host airflow-scheduler
+[2024-06-24T14:12:37.394+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='transform.raw_employee_territories_run' AIRFLOW_CTX_EXECUTION_DATE='2024-06-24T14:11:50.150166+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-24T14:11:50.150166+00:00'
+[2024-06-24T14:12:37.413+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-24T14:12:37.437+0000] {local.py:174} INFO - Could not import dbtRunner. Falling back to subprocess for invoking dbt.
+[2024-06-24T14:12:37.472+0000] {local.py:292} INFO - Cloning project to writable temp directory /tmp/tmp4e59w7pf from /opt/airflow/dags/dbt/dbt_project
+[2024-06-24T14:12:37.522+0000] {local.py:303} INFO - Partial parse is enabled and the latest partial parse file is /tmp/cosmos/ELT-PROJECT__transform/target/partial_parse.msgpack
+[2024-06-24T14:12:37.723+0000] {base.py:84} INFO - Using connection ID 'snow_conn' for task execution.
+[2024-06-24T14:12:37.726+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-24T14:12:37.741+0000] {base.py:225} INFO - Using real values for profile dbt_project
+[2024-06-24T14:12:37.768+0000] {config.py:291} INFO - Creating temporary profiles.yml with use_mock_values=False at /tmp/tmp71mspmvo/profiles.yml with the following contents:
+dbt_project:
+    outputs:
+        dev:
+            account: sk84886.europe-west2.gcp
+            database: ELT_PROJECT
+            password: '{{ env_var(''COSMOS_CONN_SNOWFLAKE_PASSWORD'') }}'
+            role: SYSADMIN
+            schema: PUBLIC
+            type: snowflake
+            user: DATANINJA
+            warehouse: TRANSFORM
+    target: dev
+
+[2024-06-24T14:12:37.794+0000] {local.py:247} INFO - Trying to run the command:
+ ['/opt/airflow/dbt_venv/bin/dbt', 'deps', '--project-dir', '/tmp/tmp4e59w7pf', '--profiles-dir', '/tmp/tmp71mspmvo', '--profile', 'dbt_project', '--target', 'dev']
+From /tmp/tmp4e59w7pf
+[2024-06-24T14:12:37.812+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-06-24T14:12:37.821+0000] {subprocess.py:73} INFO - Running command: ['/opt/airflow/dbt_venv/bin/dbt', 'deps', '--project-dir', '/tmp/tmp4e59w7pf', '--profiles-dir', '/tmp/tmp71mspmvo', '--profile', 'dbt_project', '--target', 'dev']
+[2024-06-24T14:12:37.908+0000] {subprocess.py:84} INFO - Command output:
+[2024-06-24T14:12:50.243+0000] {subprocess.py:94} INFO - [0m14:12:50  Running with dbt=1.8.3
+[2024-06-24T14:12:51.624+0000] {subprocess.py:94} INFO - [0m14:12:51  Updating lock file in file path: /tmp/tmp4e59w7pf/package-lock.yml
+[2024-06-24T14:12:51.650+0000] {subprocess.py:94} INFO - [0m14:12:51  Installing dbt-labs/dbt_utils
+[2024-06-24T14:12:52.562+0000] {subprocess.py:94} INFO - [0m14:12:52  Installed from version 0.8.6
+[2024-06-24T14:12:52.569+0000] {subprocess.py:94} INFO - [0m14:12:52  Updated version available: 1.2.0
+[2024-06-24T14:12:52.577+0000] {subprocess.py:94} INFO - [0m14:12:52
+[2024-06-24T14:12:52.581+0000] {subprocess.py:94} INFO - [0m14:12:52  Updates available for packages: ['dbt-labs/dbt_utils']
+[2024-06-24T14:12:52.583+0000] {subprocess.py:94} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-06-24T14:12:54.575+0000] {subprocess.py:98} INFO - Command exited with return code 0
+[2024-06-24T14:12:54.577+0000] {local.py:254} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-06-24T14:12:54.579+0000] {local.py:247} INFO - Trying to run the command:
+ ['/opt/airflow/dbt_venv/bin/dbt', 'run', '--models', 'raw_employee_territories', '--project-dir', '/tmp/tmp4e59w7pf', '--profiles-dir', '/tmp/tmp71mspmvo', '--profile', 'dbt_project', '--target', 'dev']
+From /tmp/tmp4e59w7pf
+[2024-06-24T14:12:54.581+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-06-24T14:12:54.583+0000] {subprocess.py:73} INFO - Running command: ['/opt/airflow/dbt_venv/bin/dbt', 'run', '--models', 'raw_employee_territories', '--project-dir', '/tmp/tmp4e59w7pf', '--profiles-dir', '/tmp/tmp71mspmvo', '--profile', 'dbt_project', '--target', 'dev']
+[2024-06-24T14:12:54.606+0000] {subprocess.py:84} INFO - Command output:
+[2024-06-24T14:13:06.860+0000] {subprocess.py:94} INFO - [0m14:13:06  Running with dbt=1.8.3
+[2024-06-24T14:13:10.977+0000] {subprocess.py:94} INFO - [0m14:13:10  Registered adapter: snowflake=1.8.3
+[2024-06-24T14:13:19.023+0000] {subprocess.py:94} INFO - [0m14:13:19  Found 20 models, 27 data tests, 11 sources, 684 macros
+[2024-06-24T14:13:19.042+0000] {subprocess.py:94} INFO - [0m14:13:19
+[2024-06-24T14:13:26.802+0000] {subprocess.py:94} INFO - [0m14:13:26  Concurrency: 1 threads (target='dev')
+[2024-06-24T14:13:26.804+0000] {subprocess.py:94} INFO - [0m14:13:26
+[2024-06-24T14:13:26.851+0000] {subprocess.py:94} INFO - [0m14:13:26  1 of 1 START sql table model raw.raw_employee_territories ...................... [RUN]
+[2024-06-24T14:13:29.254+0000] {subprocess.py:94} INFO - [0m14:13:29  1 of 1 OK created sql table model raw.raw_employee_territories ................. [[32mSUCCESS 1[0m in 2.40s]
+[2024-06-24T14:13:29.266+0000] {subprocess.py:94} INFO - [0m14:13:29
+[2024-06-24T14:13:29.268+0000] {subprocess.py:94} INFO - [0m14:13:29  Finished running 1 table model in 0 hours 0 minutes and 10.22 seconds (10.22s).
+[2024-06-24T14:13:29.457+0000] {subprocess.py:94} INFO - [0m14:13:29
+[2024-06-24T14:13:29.461+0000] {subprocess.py:94} INFO - [0m14:13:29  [32mCompleted successfully[0m
+[2024-06-24T14:13:29.463+0000] {subprocess.py:94} INFO - [0m14:13:29
+[2024-06-24T14:13:29.465+0000] {subprocess.py:94} INFO - [0m14:13:29  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2024-06-24T14:13:31.222+0000] {subprocess.py:98} INFO - Command exited with return code 0
+[2024-06-24T14:13:31.225+0000] {local.py:254} INFO - [0m14:13:29  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2024-06-24T14:13:31.296+0000] {local.py:196} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/manifest/v12.json is above dbt-ol supported version 7. This might cause errors.
+[2024-06-24T14:13:31.297+0000] {local.py:196} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/run-results/v6.json is above dbt-ol supported version 5. This might cause errors.
+[2024-06-24T14:13:31.345+0000] {local.py:349} INFO - Inlets: [Dataset(uri='snowflake://sk84886.europe-west2.gcp/ELT_PROJECT.PUBLIC.employee_territories', extra=None)]
+[2024-06-24T14:13:31.349+0000] {local.py:350} INFO - Outlets: [Dataset(uri='snowflake://sk84886.europe-west2.gcp/ELT_PROJECT.raw.raw_employee_territories', extra=None)]
+[2024-06-24T14:13:31.352+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-06-24T14:13:32.154+0000] {dag.py:3954} INFO - Setting next_dagrun for ELT-PROJECT to None, run_after=None
+[2024-06-24T14:13:32.406+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-24T14:13:32.621+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ELT-PROJECT, task_id=transform.raw_employee_territories_run, run_id=manual__2024-06-24T14:11:50.150166+00:00, execution_date=20240624T141150, start_date=20240624T141236, end_date=20240624T141332
+[2024-06-24T14:13:32.780+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-24T14:13:32.925+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-24T14:13:32.938+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

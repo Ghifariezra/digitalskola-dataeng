@@ -1,0 +1,378 @@
+[2024-07-09T12:00:10.264+0000] {processor.py:161} INFO - Started process (PID=2244) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:00:10.267+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:00:10.270+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:10.269+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:00:10.644+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:00:10.806+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:10.804+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:SPARK_JOBS
+[2024-07-09T12:00:10.831+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:10.830+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:SPARK_JOBS
+[2024-07-09T12:00:10.852+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:10.851+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:SPARK_JOBS
+[2024-07-09T12:00:10.854+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:10.854+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:00:10.885+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:10.884+0000] {dag.py:3118} INFO - Creating ORM DAG for SPARK_JOBS
+[2024-07-09T12:00:10.888+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:10.888+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:00:10.962+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.719 seconds
+[2024-07-09T12:00:41.252+0000] {processor.py:161} INFO - Started process (PID=2270) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:00:41.261+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:00:41.264+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:41.263+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:00:41.583+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:00:41.647+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:41.646+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:00:41.681+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:00:41.681+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:00:41.735+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.503 seconds
+[2024-07-09T12:01:12.330+0000] {processor.py:161} INFO - Started process (PID=2296) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:01:12.335+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:01:12.342+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:01:12.340+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:01:12.769+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:01:12.824+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:01:12.824+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:01:12.871+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:01:12.871+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:01:12.938+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.638 seconds
+[2024-07-09T12:01:43.336+0000] {processor.py:161} INFO - Started process (PID=2324) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:01:43.339+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:01:43.342+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:01:43.341+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:01:43.484+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:01:43.474+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/elt-spark copy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/elt-spark copy.py", line 6, in <module>
+    from spark.extractors import extract_func
+  File "/opt/airflow/dags/spark/extractors.py", line 40
+    for table in 
+                 ^
+SyntaxError: invalid syntax
+[2024-07-09T12:01:43.488+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:01:43.566+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.245 seconds
+[2024-07-09T12:02:14.070+0000] {processor.py:161} INFO - Started process (PID=2348) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:02:14.073+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:02:14.076+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:02:14.075+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:02:14.473+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:02:14.545+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:02:14.544+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:02:14.598+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:02:14.597+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:02:14.720+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.668 seconds
+[2024-07-09T12:02:45.110+0000] {processor.py:161} INFO - Started process (PID=2374) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:02:45.113+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:02:45.116+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:02:45.115+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:02:45.454+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:02:45.510+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:02:45.509+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:02:45.539+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:02:45.538+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:02:45.612+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.541 seconds
+[2024-07-09T12:03:16.793+0000] {processor.py:161} INFO - Started process (PID=2400) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:03:16.798+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:03:16.802+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:03:16.801+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:03:17.583+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:03:17.720+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:03:17.719+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:03:17.792+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:03:17.791+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:03:17.906+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 1.143 seconds
+[2024-07-09T12:03:48.719+0000] {processor.py:161} INFO - Started process (PID=2423) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:03:48.721+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:03:48.723+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:03:48.722+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:03:49.090+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:03:49.157+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:03:49.156+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:03:49.190+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:03:49.190+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:03:49.249+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.545 seconds
+[2024-07-09T12:04:19.492+0000] {processor.py:161} INFO - Started process (PID=2507) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:04:19.496+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:04:19.507+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:04:19.500+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:04:20.213+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:04:20.289+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:04:20.288+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:04:20.346+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:04:20.345+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:04:20.419+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.955 seconds
+[2024-07-09T12:04:51.316+0000] {processor.py:161} INFO - Started process (PID=2531) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:04:51.321+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:04:51.328+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:04:51.325+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:04:51.808+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:04:51.874+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:04:51.874+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:04:51.935+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:04:51.934+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:04:52.044+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.760 seconds
+[2024-07-09T12:10:17.560+0000] {processor.py:161} INFO - Started process (PID=169) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:10:17.561+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:10:17.564+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:10:17.563+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:10:17.594+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:10:17.588+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/elt-spark copy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/elt-spark copy.py", line 6, in <module>
+    from spark.extractors import extract_func
+ModuleNotFoundError: No module named 'spark'
+[2024-07-09T12:10:17.597+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:10:17.630+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.078 seconds
+[2024-07-09T12:10:48.169+0000] {processor.py:161} INFO - Started process (PID=195) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:10:48.170+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:10:48.175+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:10:48.174+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:10:48.209+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:10:48.201+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/elt-spark copy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/elt-spark copy.py", line 6, in <module>
+    from spark.extractors import extract_func
+ModuleNotFoundError: No module named 'spark'
+[2024-07-09T12:10:48.211+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:10:48.273+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.118 seconds
+[2024-07-09T12:11:18.866+0000] {processor.py:161} INFO - Started process (PID=221) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:11:18.868+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:11:18.870+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:11:18.869+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:11:18.898+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:11:18.892+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/elt-spark copy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/elt-spark copy.py", line 6, in <module>
+    from spark.extractors import extract_func
+ModuleNotFoundError: No module named 'spark'
+[2024-07-09T12:11:18.900+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:11:18.929+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.072 seconds
+[2024-07-09T12:11:43.023+0000] {processor.py:161} INFO - Started process (PID=249) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:11:43.024+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:11:43.026+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:11:43.025+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:11:43.065+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:11:43.147+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:11:43.146+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:11:43.162+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:11:43.162+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:11:43.207+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.191 seconds
+[2024-07-09T12:12:12.555+0000] {processor.py:161} INFO - Started process (PID=275) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:12.556+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:12:12.558+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:12.558+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:12.607+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:12.632+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:12.632+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:12:12.655+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:12.654+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:12:12.708+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.164 seconds
+[2024-07-09T12:12:15.589+0000] {processor.py:161} INFO - Started process (PID=280) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:15.590+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:12:15.592+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:15.591+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:15.632+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:15.709+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:15.709+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:12:15.728+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:15.728+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:12:15.768+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.185 seconds
+[2024-07-09T12:12:46.050+0000] {processor.py:161} INFO - Started process (PID=358) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:46.051+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:12:46.052+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:46.052+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:46.088+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:12:46.127+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:46.126+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:12:46.146+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:12:46.146+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:12:46.176+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.134 seconds
+[2024-07-09T12:13:17.141+0000] {processor.py:161} INFO - Started process (PID=384) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:13:17.142+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:13:17.144+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:13:17.143+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:13:17.167+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:13:17.201+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:13:17.201+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:13:17.241+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:13:17.241+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:13:17.299+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.165 seconds
+[2024-07-09T12:13:47.730+0000] {processor.py:161} INFO - Started process (PID=410) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:13:47.731+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:13:47.732+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:13:47.732+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:13:47.762+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:13:47.820+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:13:47.820+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:13:47.843+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:13:47.842+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:13:47.870+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.148 seconds
+[2024-07-09T12:14:17.956+0000] {processor.py:161} INFO - Started process (PID=436) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:14:17.958+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:14:17.959+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:14:17.959+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:14:17.987+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:14:18.021+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:14:18.021+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:14:18.037+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:14:18.036+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:14:18.068+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.118 seconds
+[2024-07-09T12:14:48.639+0000] {processor.py:161} INFO - Started process (PID=462) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:14:48.640+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:14:48.641+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:14:48.641+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:14:48.663+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:14:48.692+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:14:48.691+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:14:48.708+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:14:48.707+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:14:48.734+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.101 seconds
+[2024-07-09T12:15:19.644+0000] {processor.py:161} INFO - Started process (PID=486) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:15:19.645+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:15:19.647+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:15:19.646+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:15:19.677+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:15:19.720+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:15:19.719+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:15:19.744+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:15:19.744+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:15:19.790+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.154 seconds
+[2024-07-09T12:15:50.757+0000] {processor.py:161} INFO - Started process (PID=509) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:15:50.758+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:15:50.760+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:15:50.759+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:15:50.786+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:15:50.818+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:15:50.818+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:15:50.834+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:15:50.834+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:15:50.862+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.111 seconds
+[2024-07-09T12:16:21.593+0000] {processor.py:161} INFO - Started process (PID=535) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:16:21.594+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:16:21.595+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:16:21.595+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:16:21.622+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:16:21.657+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:16:21.656+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:16:21.673+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:16:21.672+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:16:21.703+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.117 seconds
+[2024-07-09T12:16:51.959+0000] {processor.py:161} INFO - Started process (PID=561) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:16:51.960+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:16:51.961+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:16:51.961+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:16:51.985+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:16:52.016+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:16:52.015+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:16:52.031+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:16:52.031+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:16:52.067+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.113 seconds
+[2024-07-09T12:17:22.652+0000] {processor.py:161} INFO - Started process (PID=638) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:17:22.653+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:17:22.654+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:17:22.654+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:17:22.689+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:17:22.753+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:17:22.752+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:17:22.773+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:17:22.773+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:17:22.814+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.170 seconds
+[2024-07-09T12:17:53.737+0000] {processor.py:161} INFO - Started process (PID=660) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:17:53.738+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:17:53.740+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:17:53.739+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:17:53.767+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:17:53.816+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:17:53.816+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:17:53.836+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:17:53.836+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:17:53.870+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.141 seconds
+[2024-07-09T12:18:24.005+0000] {processor.py:161} INFO - Started process (PID=686) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:18:24.006+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:18:24.007+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:18:24.007+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:18:24.038+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:18:24.071+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:18:24.071+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:18:24.087+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:18:24.087+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:18:24.113+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.115 seconds
+[2024-07-09T12:18:54.307+0000] {processor.py:161} INFO - Started process (PID=712) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:18:54.308+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:18:54.309+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:18:54.309+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:18:54.337+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:18:54.369+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:18:54.369+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:18:54.385+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:18:54.384+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:18:54.415+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.115 seconds
+[2024-07-09T12:19:24.676+0000] {processor.py:161} INFO - Started process (PID=738) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:19:24.677+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:19:24.679+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:19:24.678+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:19:24.706+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:19:24.747+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:19:24.746+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:19:24.763+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:19:24.763+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:19:24.805+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.136 seconds
+[2024-07-09T12:19:55.018+0000] {processor.py:161} INFO - Started process (PID=764) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:19:55.020+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:19:55.021+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:19:55.021+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:19:55.045+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:19:55.081+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:19:55.080+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:19:55.096+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:19:55.096+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:19:55.124+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.114 seconds
+[2024-07-09T12:20:25.670+0000] {processor.py:161} INFO - Started process (PID=790) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:20:25.672+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:20:25.674+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:20:25.672+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:20:25.701+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:20:25.736+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:20:25.736+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:20:25.752+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:20:25.751+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:20:25.781+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.118 seconds
+[2024-07-09T12:20:56.571+0000] {processor.py:161} INFO - Started process (PID=816) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:20:56.572+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:20:56.574+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:20:56.573+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:20:56.599+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:20:56.630+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:20:56.629+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:20:56.647+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:20:56.646+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:20:56.682+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.118 seconds
+[2024-07-09T12:21:26.965+0000] {processor.py:161} INFO - Started process (PID=842) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:21:26.967+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:21:26.968+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:21:26.968+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:21:26.993+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:21:27.025+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:21:27.025+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:21:27.040+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:21:27.040+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:21:27.066+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.108 seconds
+[2024-07-09T12:21:57.743+0000] {processor.py:161} INFO - Started process (PID=870) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:21:57.744+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:21:57.746+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:21:57.746+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:21:57.773+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:21:57.807+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:21:57.807+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:21:57.824+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:21:57.824+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:21:57.851+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.118 seconds
+[2024-07-09T12:22:28.582+0000] {processor.py:161} INFO - Started process (PID=945) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:22:28.584+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:22:28.586+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:22:28.585+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:22:28.616+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:22:28.667+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:22:28.666+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:22:28.697+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:22:28.696+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:22:28.758+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.187 seconds
+[2024-07-09T12:22:59.081+0000] {processor.py:161} INFO - Started process (PID=968) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:22:59.082+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:22:59.083+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:22:59.083+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:22:59.105+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:22:59.135+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:22:59.135+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:22:59.150+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:22:59.150+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:22:59.182+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.108 seconds
+[2024-07-09T12:23:29.393+0000] {processor.py:161} INFO - Started process (PID=994) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:23:29.394+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:23:29.395+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:23:29.395+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:23:29.419+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:23:29.446+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:23:29.446+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:23:29.459+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:23:29.459+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:23:29.487+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.100 seconds
+[2024-07-09T12:26:53.362+0000] {processor.py:161} INFO - Started process (PID=165) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:26:53.363+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:26:53.366+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:26:53.366+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:26:53.397+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:26:53.419+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:26:53.419+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:26:53.441+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:26:53.441+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:26:53.480+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.127 seconds
+[2024-07-09T12:27:23.722+0000] {processor.py:161} INFO - Started process (PID=191) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:27:23.723+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:27:23.726+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:27:23.726+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:27:23.758+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:27:23.873+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:27:23.873+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:27:23.890+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:27:23.889+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:27:23.921+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.211 seconds
+[2024-07-09T12:34:18.085+0000] {processor.py:161} INFO - Started process (PID=165) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:34:18.088+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:34:18.093+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:34:18.092+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:34:18.206+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:34:18.324+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:34:18.323+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:34:18.419+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:34:18.419+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:34:18.550+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.478 seconds
+[2024-07-09T12:34:49.280+0000] {processor.py:161} INFO - Started process (PID=191) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:34:49.285+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:34:49.296+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:34:49.292+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:34:49.605+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:34:49.661+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:34:49.660+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:34:49.754+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:34:49.754+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:34:49.934+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.674 seconds
+[2024-07-09T12:35:21.406+0000] {processor.py:161} INFO - Started process (PID=220) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:35:21.417+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:35:21.459+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:35:21.453+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:35:21.791+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:35:22.559+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:35:22.558+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:35:22.591+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:35:22.591+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:35:22.730+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 1.404 seconds
+[2024-07-09T12:35:53.704+0000] {processor.py:161} INFO - Started process (PID=243) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:35:53.712+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:35:53.737+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:35:53.736+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:35:54.087+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:35:54.316+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:35:54.309+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:35:54.545+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:35:54.541+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:35:54.689+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 1.012 seconds
+[2024-07-09T12:36:27.568+0000] {processor.py:161} INFO - Started process (PID=267) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:36:27.582+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:36:27.605+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:36:27.604+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:36:28.027+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:36:28.249+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:36:28.244+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:36:28.290+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:36:28.289+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:36:28.404+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.857 seconds
+[2024-07-09T12:36:59.679+0000] {processor.py:161} INFO - Started process (PID=288) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:36:59.688+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:36:59.696+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:36:59.692+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:37:00.062+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:37:00.373+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:37:00.363+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:37:00.503+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:37:00.502+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:37:00.870+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 1.219 seconds
+[2024-07-09T12:37:31.867+0000] {processor.py:161} INFO - Started process (PID=308) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:37:31.876+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:37:31.879+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:37:31.879+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:37:32.093+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:37:32.197+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:37:32.196+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:37:32.351+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:37:32.350+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:37:32.466+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.614 seconds
+[2024-07-09T12:38:03.337+0000] {processor.py:161} INFO - Started process (PID=331) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:38:03.342+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:38:03.346+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:38:03.345+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:38:03.702+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:38:03.949+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:38:03.948+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:38:04.082+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:38:04.081+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:38:04.257+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 0.961 seconds
+[2024-07-09T12:38:37.318+0000] {processor.py:161} INFO - Started process (PID=409) to work on /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:38:37.349+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt-spark copy.py for tasks to queue
+[2024-07-09T12:38:37.359+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:38:37.357+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:38:37.954+0000] {processor.py:840} INFO - DAG(s) 'SPARK_JOBS' retrieved from /opt/airflow/dags/elt-spark copy.py
+[2024-07-09T12:38:38.308+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:38:38.297+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-09T12:38:38.509+0000] {logging_mixin.py:188} INFO - [2024-07-09T12:38:38.508+0000] {dag.py:3954} INFO - Setting next_dagrun for SPARK_JOBS to None, run_after=None
+[2024-07-09T12:38:38.966+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt-spark copy.py took 1.805 seconds

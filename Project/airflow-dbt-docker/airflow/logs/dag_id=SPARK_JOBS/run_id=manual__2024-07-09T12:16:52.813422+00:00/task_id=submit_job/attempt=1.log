@@ -1,0 +1,49 @@
+[2024-07-09T12:16:54.085+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-09T12:16:54.120+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: SPARK_JOBS.submit_job manual__2024-07-09T12:16:52.813422+00:00 [queued]>
+[2024-07-09T12:16:54.131+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: SPARK_JOBS.submit_job manual__2024-07-09T12:16:52.813422+00:00 [queued]>
+[2024-07-09T12:16:54.131+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-09T12:16:54.149+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): submit_job> on 2024-07-09 12:16:52.813422+00:00
+[2024-07-09T12:16:54.158+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=566) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-09T12:16:54.159+0000] {standard_task_runner.py:63} INFO - Started process 567 to run task
+[2024-07-09T12:16:54.158+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'SPARK_JOBS', 'submit_job', 'manual__2024-07-09T12:16:52.813422+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/elt-spark copy.py', '--cfg-path', '/tmp/tmpk_yck3rg']
+[2024-07-09T12:16:54.160+0000] {standard_task_runner.py:91} INFO - Job 27: Subtask submit_job
+[2024-07-09T12:16:54.184+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-09T12:16:54.244+0000] {task_command.py:426} INFO - Running <TaskInstance: SPARK_JOBS.submit_job manual__2024-07-09T12:16:52.813422+00:00 [running]> on host airflow-scheduler
+[2024-07-09T12:16:54.362+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='SPARK_JOBS' AIRFLOW_CTX_TASK_ID='submit_job' AIRFLOW_CTX_EXECUTION_DATE='2024-07-09T12:16:52.813422+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-09T12:16:52.813422+00:00'
+[2024-07-09T12:16:54.363+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-09T12:16:54.377+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2024-07-09T12:16:54.378+0000] {spark_submit.py:401} INFO - Spark-Submit cmd: spark-submit --master yarn --name arrow-spark --queue root.default /spark/extractors.py
+[2024-07-09T12:16:54.475+0000] {spark_submit.py:571} INFO - /home/airflow/.local/lib/python3.12/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-07-09T12:16:56.445+0000] {spark_submit.py:571} INFO - Exception in thread "main" org.apache.spark.SparkException: When running with master 'yarn' either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment.
+[2024-07-09T12:16:56.446+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:650)
+[2024-07-09T12:16:56.447+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:281)
+[2024-07-09T12:16:56.448+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:237)
+[2024-07-09T12:16:56.449+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:122)
+[2024-07-09T12:16:56.450+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$3.<init>(SparkSubmit.scala:1103)
+[2024-07-09T12:16:56.450+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:1103)
+[2024-07-09T12:16:56.451+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+[2024-07-09T12:16:56.452+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1120)
+[2024-07-09T12:16:56.453+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1129)
+[2024-07-09T12:16:56.453+0000] {spark_submit.py:571} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2024-07-09T12:16:56.467+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-09T12:16:56.483+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 174, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 502, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --name arrow-spark --queue root.default /spark/extractors.py. Error code is: 1.
+[2024-07-09T12:16:56.488+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=SPARK_JOBS, task_id=submit_job, run_id=manual__2024-07-09T12:16:52.813422+00:00, execution_date=20240709T121652, start_date=20240709T121654, end_date=20240709T121656
+[2024-07-09T12:16:56.503+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 27 for task submit_job (Cannot execute: spark-submit --master yarn --name arrow-spark --queue root.default /spark/extractors.py. Error code is: 1.; 567)
+[2024-07-09T12:16:56.544+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-09T12:16:56.569+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-09T12:16:56.575+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

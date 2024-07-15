@@ -1,0 +1,23 @@
+[2024-06-27T13:15:43.771+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T13:15:43.974+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_regions manual__2024-06-27T13:15:36.474906+00:00 [queued]>
+[2024-06-27T13:15:44.077+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_regions manual__2024-06-27T13:15:36.474906+00:00 [queued]>
+[2024-06-27T13:15:44.081+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-27T13:15:44.250+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_regions> on 2024-06-27 13:15:36.474906+00:00
+[2024-06-27T13:15:44.301+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=273) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T13:15:44.306+0000] {standard_task_runner.py:63} INFO - Started process 293 to run task
+[2024-06-27T13:15:44.319+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'TEST_SPARK', 'extract.extract_regions', 'manual__2024-06-27T13:15:36.474906+00:00', '--job-id', '378', '--raw', '--subdir', 'DAGS_FOLDER/elt-spark.py', '--cfg-path', '/tmp/tmpdwd78mvk']
+[2024-06-27T13:15:44.328+0000] {standard_task_runner.py:91} INFO - Job 378: Subtask extract.extract_regions
+[2024-06-27T13:15:44.542+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T13:15:44.979+0000] {task_command.py:426} INFO - Running <TaskInstance: TEST_SPARK.extract.extract_regions manual__2024-06-27T13:15:36.474906+00:00 [running]> on host airflow-scheduler
+[2024-06-27T13:15:45.790+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='TEST_SPARK' AIRFLOW_CTX_TASK_ID='extract.extract_regions' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T13:15:36.474906+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T13:15:36.474906+00:00'
+[2024-06-27T13:15:45.803+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T13:16:53.495+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-06-27T13:16:53.521+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-27T13:16:53.584+0000] {process_utils.py:132} INFO - Sending 15 to group 293. PIDs of all processes in the group: [323, 1726, 293]
+[2024-06-27T13:16:53.596+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 293
+[2024-06-27T13:16:53.613+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-06-27T13:16:53.616+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T13:16:53.956+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1726, status='terminated', started='13:16:52') (1726) terminated with exit code None
+[2024-06-27T13:16:54.273+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2024-06-27T13:16:54.486+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=293, status='terminated', exitcode=0, started='13:15:43') (293) terminated with exit code 0
+[2024-06-27T13:16:55.679+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=323, status='terminated', started='13:15:45') (323) terminated with exit code None

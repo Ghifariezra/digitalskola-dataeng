@@ -1,0 +1,81 @@
+[2024-06-27T13:17:15.028+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T13:17:15.207+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_employees manual__2024-06-27T13:17:08.054312+00:00 [queued]>
+[2024-06-27T13:17:15.262+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_employees manual__2024-06-27T13:17:08.054312+00:00 [queued]>
+[2024-06-27T13:17:15.270+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-27T13:17:15.430+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_employees> on 2024-06-27 13:17:08.054312+00:00
+[2024-06-27T13:17:15.482+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1880) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T13:17:15.485+0000] {standard_task_runner.py:63} INFO - Started process 1894 to run task
+[2024-06-27T13:17:15.512+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'TEST_SPARK', 'extract.extract_employees', 'manual__2024-06-27T13:17:08.054312+00:00', '--job-id', '385', '--raw', '--subdir', 'DAGS_FOLDER/elt-spark.py', '--cfg-path', '/tmp/tmp30p00mmu']
+[2024-06-27T13:17:15.540+0000] {standard_task_runner.py:91} INFO - Job 385: Subtask extract.extract_employees
+[2024-06-27T13:17:15.667+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T13:17:15.981+0000] {task_command.py:426} INFO - Running <TaskInstance: TEST_SPARK.extract.extract_employees manual__2024-06-27T13:17:08.054312+00:00 [running]> on host airflow-scheduler
+[2024-06-27T13:17:16.679+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='TEST_SPARK' AIRFLOW_CTX_TASK_ID='extract.extract_employees' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T13:17:08.054312+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T13:17:08.054312+00:00'
+[2024-06-27T13:17:16.694+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T13:19:43.996+0000] {logging_mixin.py:188} INFO - +----------+---------+---------+--------------------+---------------+--------------------+--------------------+--------------------+--------+------+----------+-------+--------------+---------+--------------------+--------------------+---------+--------------------+
+|employeeID| lastName|firstName|               title|titleOfCourtesy|           birthDate|            hireDate|             address|    city|region|postalCode|country|     homePhone|extension|               photo|               notes|reportsTo|           photoPath|
++----------+---------+---------+--------------------+---------------+--------------------+--------------------+--------------------+--------+------+----------+-------+--------------+---------+--------------------+--------------------+---------+--------------------+
+|         1|  Davolio|    Nancy|Sales Representative|            Ms.|1948-12-08 00:00:...|1992-05-01 00:00:...|507 20th Ave. E. ...| Seattle|    WA|     98122|    USA|(206) 555-9857|     5467|0x151C2F000200000...|Education include...|      2.0|http://accweb/emm...|
+|         2|   Fuller|   Andrew|Vice President Sales|            Dr.|1952-02-19 00:00:...|1992-08-14 00:00:...|  908 W. Capital Way|  Tacoma|    WA|     98401|    USA|(206) 555-9482|     3457|0x151C2F000200000...|Andrew received h...|      NaN|http://accweb/emm...|
+|         3|Leverling|    Janet|Sales Representative|            Ms.|1963-08-30 00:00:...|1992-04-01 00:00:...|  722 Moss Bay Blvd.|Kirkland|    WA|     98033|    USA|(206) 555-3412|     3355|0x151C2F000200000...|Janet has a BS de...|      2.0|http://accweb/emm...|
+|         4|  Peacock| Margaret|Sales Representative|           Mrs.|1937-09-19 00:00:...|1993-05-03 00:00:...|4110 Old Redmond Rd.| Redmond|    WA|     98052|    USA|(206) 555-8122|     5176|0x151C2F000200000...|Margaret holds a ...|      2.0|http://accweb/emm...|
+|         5| Buchanan|   Steven|       Sales Manager|            Mr.|1955-03-04 00:00:...|1993-10-17 00:00:...|     14 Garrett Hill|  London|   NaN|   SW1 8JR|     UK| (71) 555-4848|     3453|0x151C2F000200000...|Steven Buchanan g...|      2.0|http://accweb/emm...|
+|         6|   Suyama|  Michael|Sales Representative|            Mr.|1963-07-02 00:00:...|1993-10-17 00:00:...|Coventry House Mi...|  London|   NaN|   EC2 7JR|     UK| (71) 555-7773|      428|0x151C2F000200000...|Michael is a grad...|      5.0|http://accweb/emm...|
+|         7|     King|   Robert|Sales Representative|            Mr.|1960-05-29 00:00:...|1994-01-02 00:00:...|Edgeham Hollow Wi...|  London|   NaN|   RG1 9SP|     UK| (71) 555-5598|      465|0x151C2F000200000...|Robert King serve...|      5.0|http://accweb/emm...|
+|         8| Callahan|    Laura|Inside Sales Coor...|            Ms.|1958-01-09 00:00:...|1994-03-05 00:00:...| 4726 11th Ave. N.E.| Seattle|    WA|     98105|    USA|(206) 555-1189|     2344|0x151C2F000200000...|Laura received a ...|      2.0|http://accweb/emm...|
+|         9|Dodsworth|     Anne|Sales Representative|            Ms.|1966-01-27 00:00:...|1994-11-15 00:00:...|   7 Houndstooth Rd.|  London|   NaN|   WG2 7LT|     UK| (71) 555-4444|      452|0x151C2F000200000...|Anne has a BA deg...|      5.0|http://accweb/emm...|
++----------+---------+---------+--------------------+---------------+--------------------+--------------------+--------------------+--------+------+----------+-------+--------------+---------+--------------------+--------------------+---------+--------------------+
+[2024-06-27T13:19:44.066+0000] {logging_mixin.py:188} INFO - None
+[2024-06-27T13:19:44.073+0000] {python.py:237} INFO - Done. Returned value was: DataFrame[employeeID: bigint, lastName: string, firstName: string, title: string, titleOfCourtesy: string, birthDate: string, hireDate: string, address: string, city: string, region: string, postalCode: string, country: string, homePhone: string, extension: bigint, photo: string, notes: string, reportsTo: double, photoPath: string]
+[2024-06-27T13:19:44.467+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T13:19:44.799+0000] {xcom.py:675} ERROR - Object of type DataFrame is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your airflow config or make sure to decorate your object with attr.
+[2024-06-27T13:19:44.834+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 189, in serialize
+    raise TypeError(f"cannot serialize object of type {cls}")
+TypeError: cannot serialize object of type <class 'pyspark.sql.dataframe.DataFrame'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-06-27T13:19:45.248+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=TEST_SPARK, task_id=extract.extract_employees, run_id=manual__2024-06-27T13:17:08.054312+00:00, execution_date=20240627T131708, start_date=20240627T131715, end_date=20240627T131945
+[2024-06-27T13:19:45.473+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 385 for task extract.extract_employees (Object of type DataFrame is not JSON serializable; 1894)
+[2024-06-27T13:19:45.694+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-27T13:19:46.227+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-27T13:19:46.247+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

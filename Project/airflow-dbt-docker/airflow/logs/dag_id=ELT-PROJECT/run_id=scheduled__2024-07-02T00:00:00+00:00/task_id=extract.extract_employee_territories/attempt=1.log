@@ -1,0 +1,128 @@
+[2024-07-13T14:26:02.352+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-13T14:26:02.531+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_employee_territories scheduled__2024-07-02T00:00:00+00:00 [queued]>
+[2024-07-13T14:26:02.615+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_employee_territories scheduled__2024-07-02T00:00:00+00:00 [queued]>
+[2024-07-13T14:26:02.619+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-13T14:26:02.755+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_employee_territories> on 2024-07-02 00:00:00+00:00
+[2024-07-13T14:26:02.817+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'extract.extract_employee_territories', 'scheduled__2024-07-02T00:00:00+00:00', '--job-id', '192', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmp_eu4igrq']
+[2024-07-13T14:26:02.847+0000] {standard_task_runner.py:91} INFO - Job 192: Subtask extract.extract_employee_territories
+[2024-07-13T14:26:02.811+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3953) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-13T14:26:02.857+0000] {standard_task_runner.py:63} INFO - Started process 3982 to run task
+[2024-07-13T14:26:02.997+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-13T14:26:03.246+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.extract.extract_employee_territories scheduled__2024-07-02T00:00:00+00:00 [running]> on host airflow-scheduler
+[2024-07-13T14:26:04.395+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='extract.extract_employee_territories' AIRFLOW_CTX_EXECUTION_DATE='2024-07-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-02T00:00:00+00:00'
+[2024-07-13T14:26:04.408+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-13T14:26:04.540+0000] {base.py:84} INFO - Using connection ID 'post_conn' for task execution.
+[2024-07-13T14:26:04.807+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-13T14:26:04.814+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/elt.py", line 49, in extract
+    return extract_func(
+           ^^^^^^^^^^^^^
+  File "/opt/airflow/dags/el_module/extractors.py", line 11, in extract_func
+    ).get_conn()
+      ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/postgres/hooks/postgres.py", line 175, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  password authentication failed for user 'dataninja'
+connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+[2024-07-13T14:26:05.127+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ELT-PROJECT, task_id=extract.extract_employee_territories, run_id=scheduled__2024-07-02T00:00:00+00:00, execution_date=20240702T000000, start_date=20240713T142602, end_date=20240713T142605
+[2024-07-13T14:26:05.272+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 192 for task extract.extract_employee_territories (connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  password authentication failed for user 'dataninja'
+connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+; 3982)
+[2024-07-13T14:26:05.356+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-13T14:26:05.444+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-07-14T03:58:46.792+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-14T03:58:46.966+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_employee_territories scheduled__2024-07-02T00:00:00+00:00 [queued]>
+[2024-07-14T03:58:47.031+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_employee_territories scheduled__2024-07-02T00:00:00+00:00 [queued]>
+[2024-07-14T03:58:47.032+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-14T03:58:47.122+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_employee_territories> on 2024-07-02 00:00:00+00:00
+[2024-07-14T03:58:47.156+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=9673) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-14T03:58:47.174+0000] {standard_task_runner.py:63} INFO - Started process 9699 to run task
+[2024-07-14T03:58:47.169+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'extract.extract_employee_territories', 'scheduled__2024-07-02T00:00:00+00:00', '--job-id', '732', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmp_wsplo_6']
+[2024-07-14T03:58:47.176+0000] {standard_task_runner.py:91} INFO - Job 732: Subtask extract.extract_employee_territories
+[2024-07-14T03:58:47.312+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-14T03:58:47.539+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.extract.extract_employee_territories scheduled__2024-07-02T00:00:00+00:00 [running]> on host airflow-scheduler
+[2024-07-14T03:58:47.964+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='extract.extract_employee_territories' AIRFLOW_CTX_EXECUTION_DATE='2024-07-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-02T00:00:00+00:00'
+[2024-07-14T03:58:47.967+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-14T03:58:48.012+0000] {base.py:84} INFO - Using connection ID 'post_conn' for task execution.
+[2024-07-14T03:58:48.263+0000] {python.py:237} INFO - Done. Returned value was:     employeeID  territoryID
+0            1         6897
+1            1        19713
+2            2         1581
+3            2         1730
+4            2         1833
+5            2         2116
+6            2         2139
+7            2         2184
+8            2        40222
+9            3        30346
+10           3        31406
+11           3        32859
+12           3        33607
+13           4        20852
+14           4        27403
+15           4        27511
+16           5         2903
+17           5         7960
+18           5         8837
+19           5        10019
+20           5        10038
+21           5        11747
+22           5        14450
+23           6        85014
+24           6        85251
+25           6        98004
+26           6        98052
+27           6        98104
+28           7        60179
+29           7        60601
+30           7        80202
+31           7        80909
+32           7        90405
+33           7        94025
+34           7        94105
+35           7        95008
+36           7        95054
+37           7        95060
+38           8        19428
+39           8        44122
+40           8        45839
+41           8        53404
+42           9         3049
+43           9         3801
+44           9        48075
+45           9        48084
+46           9        48304
+47           9        55113
+48           9        55439
+[2024-07-14T03:58:48.298+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-14T03:58:49.163+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ELT-PROJECT, task_id=extract.extract_employee_territories, run_id=scheduled__2024-07-02T00:00:00+00:00, execution_date=20240702T000000, start_date=20240714T035846, end_date=20240714T035849
+[2024-07-14T03:58:50.616+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-14T03:58:50.893+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-14T03:58:50.901+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

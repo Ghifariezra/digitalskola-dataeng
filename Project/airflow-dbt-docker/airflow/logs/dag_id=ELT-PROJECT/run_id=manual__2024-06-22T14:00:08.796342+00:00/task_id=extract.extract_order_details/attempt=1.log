@@ -1,0 +1,21 @@
+[2024-06-22T14:01:24.513+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-22T14:01:24.687+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_order_details manual__2024-06-22T14:00:08.796342+00:00 [queued]>
+[2024-06-22T14:01:24.895+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_order_details manual__2024-06-22T14:00:08.796342+00:00 [queued]>
+[2024-06-22T14:01:24.909+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-22T14:01:25.127+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_order_details> on 2024-06-22 14:00:08.796342+00:00
+[2024-06-22T14:01:25.554+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2144) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-22T14:01:25.597+0000] {standard_task_runner.py:63} INFO - Started process 2295 to run task
+[2024-06-22T14:01:25.418+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'extract.extract_order_details', 'manual__2024-06-22T14:00:08.796342+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpt8iobuib']
+[2024-06-22T14:01:25.801+0000] {standard_task_runner.py:91} INFO - Job 42: Subtask extract.extract_order_details
+[2024-06-22T14:01:26.200+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-22T14:01:26.855+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.extract.extract_order_details manual__2024-06-22T14:00:08.796342+00:00 [running]> on host airflow-scheduler
+[2024-06-22T14:01:32.274+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='extract.extract_order_details' AIRFLOW_CTX_EXECUTION_DATE='2024-06-22T14:00:08.796342+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-22T14:00:08.796342+00:00'
+[2024-06-22T14:01:32.429+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-22T14:02:24.447+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-06-22T14:02:25.131+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-06-22T14:02:25.356+0000] {process_utils.py:132} INFO - Sending 15 to group 2295. PIDs of all processes in the group: [2359, 2295]
+[2024-06-22T14:02:25.448+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 2295
+[2024-06-22T14:02:25.863+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-06-22T14:02:27.076+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-22T14:02:30.477+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2359, status='terminated', started='14:01:32') (2359) terminated with exit code None
+[2024-06-22T14:02:31.094+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2295, status='terminated', exitcode=0, started='14:01:24') (2295) terminated with exit code 0

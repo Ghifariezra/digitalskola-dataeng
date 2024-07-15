@@ -1,0 +1,191 @@
+[2024-06-24T14:40:24.830+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-24T14:40:25.020+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.transform.raw_customers.run manual__2024-06-24T14:38:58.078871+00:00 [queued]>
+[2024-06-24T14:40:25.217+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.transform.raw_customers.run manual__2024-06-24T14:38:58.078871+00:00 [queued]>
+[2024-06-24T14:40:25.223+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-24T14:40:25.489+0000] {taskinstance.py:2330} INFO - Executing <Task(DbtRunLocalOperator): transform.raw_customers.run> on 2024-06-24 14:38:58.078871+00:00
+[2024-06-24T14:40:25.587+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'transform.raw_customers.run', 'manual__2024-06-24T14:38:58.078871+00:00', '--job-id', '212', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpcrnhkdb3']
+[2024-06-24T14:40:25.617+0000] {standard_task_runner.py:91} INFO - Job 212: Subtask transform.raw_customers.run
+[2024-06-24T14:40:25.694+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2669) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-24T14:40:25.697+0000] {standard_task_runner.py:63} INFO - Started process 2698 to run task
+[2024-06-24T14:40:25.850+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-24T14:40:26.196+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.transform.raw_customers.run manual__2024-06-24T14:38:58.078871+00:00 [running]> on host airflow-scheduler
+[2024-06-24T14:40:27.040+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='transform.raw_customers.run' AIRFLOW_CTX_EXECUTION_DATE='2024-06-24T14:38:58.078871+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-24T14:38:58.078871+00:00'
+[2024-06-24T14:40:27.058+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-24T14:40:27.107+0000] {local.py:174} INFO - Could not import dbtRunner. Falling back to subprocess for invoking dbt.
+[2024-06-24T14:40:27.143+0000] {local.py:292} INFO - Cloning project to writable temp directory /tmp/tmp3fztne3r from /opt/airflow/dags/dbt/dbt_project
+[2024-06-24T14:40:27.279+0000] {local.py:303} INFO - Partial parse is enabled and the latest partial parse file is /tmp/cosmos/ELT-PROJECT__transform/target/partial_parse.msgpack
+[2024-06-24T14:40:27.527+0000] {base.py:84} INFO - Using connection ID 'snow_conn' for task execution.
+[2024-06-24T14:40:27.559+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-06-24T14:40:27.572+0000] {base.py:225} INFO - Using real values for profile dbt_project
+[2024-06-24T14:40:27.585+0000] {config.py:291} INFO - Creating temporary profiles.yml with use_mock_values=False at /tmp/tmp8b1w0mpw/profiles.yml with the following contents:
+dbt_project:
+    outputs:
+        dev:
+            account: sk84886.europe-west2.gcp
+            database: ELT_PROJECT
+            password: '{{ env_var(''COSMOS_CONN_SNOWFLAKE_PASSWORD'') }}'
+            role: SYSADMIN
+            schema: PUBLIC
+            type: snowflake
+            user: DATANINJA
+            warehouse: TRANSFORM
+    target: dev
+
+[2024-06-24T14:40:27.628+0000] {local.py:247} INFO - Trying to run the command:
+ ['/opt/airflow/dbt_venv/bin/dbt', 'deps', '--project-dir', '/tmp/tmp3fztne3r', '--profiles-dir', '/tmp/tmp8b1w0mpw', '--profile', 'dbt_project', '--target', 'dev']
+From /tmp/tmp3fztne3r
+[2024-06-24T14:40:27.644+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-06-24T14:40:27.647+0000] {subprocess.py:73} INFO - Running command: ['/opt/airflow/dbt_venv/bin/dbt', 'deps', '--project-dir', '/tmp/tmp3fztne3r', '--profiles-dir', '/tmp/tmp8b1w0mpw', '--profile', 'dbt_project', '--target', 'dev']
+[2024-06-24T14:40:27.815+0000] {subprocess.py:84} INFO - Command output:
+[2024-06-24T14:40:45.617+0000] {subprocess.py:94} INFO - [0m14:40:45  Running with dbt=1.8.3
+[2024-06-24T14:40:47.764+0000] {subprocess.py:94} INFO - [0m14:40:47  Updating lock file in file path: /tmp/tmp3fztne3r/package-lock.yml
+[2024-06-24T14:40:47.792+0000] {subprocess.py:94} INFO - [0m14:40:47  Installing dbt-labs/dbt_utils
+[2024-06-24T14:40:48.438+0000] {subprocess.py:94} INFO - [0m14:40:48  Installed from version 0.8.6
+[2024-06-24T14:40:48.443+0000] {subprocess.py:94} INFO - [0m14:40:48  Updated version available: 1.2.0
+[2024-06-24T14:40:48.446+0000] {subprocess.py:94} INFO - [0m14:40:48
+[2024-06-24T14:40:48.448+0000] {subprocess.py:94} INFO - [0m14:40:48  Updates available for packages: ['dbt-labs/dbt_utils']
+[2024-06-24T14:40:48.451+0000] {subprocess.py:94} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-06-24T14:40:51.203+0000] {subprocess.py:98} INFO - Command exited with return code 0
+[2024-06-24T14:40:51.213+0000] {local.py:254} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-06-24T14:40:51.216+0000] {local.py:247} INFO - Trying to run the command:
+ ['/opt/airflow/dbt_venv/bin/dbt', 'run', '--models', 'raw_customers', '--project-dir', '/tmp/tmp3fztne3r', '--profiles-dir', '/tmp/tmp8b1w0mpw', '--profile', 'dbt_project', '--target', 'dev']
+From /tmp/tmp3fztne3r
+[2024-06-24T14:40:51.218+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-06-24T14:40:51.221+0000] {subprocess.py:73} INFO - Running command: ['/opt/airflow/dbt_venv/bin/dbt', 'run', '--models', 'raw_customers', '--project-dir', '/tmp/tmp3fztne3r', '--profiles-dir', '/tmp/tmp8b1w0mpw', '--profile', 'dbt_project', '--target', 'dev']
+[2024-06-24T14:40:51.342+0000] {subprocess.py:84} INFO - Command output:
+[2024-06-24T14:41:12.668+0000] {subprocess.py:94} INFO - [0m14:41:12  Running with dbt=1.8.3
+[2024-06-24T14:41:18.967+0000] {subprocess.py:94} INFO - [0m14:41:18  Registered adapter: snowflake=1.8.3
+[2024-06-24T14:41:21.526+0000] {subprocess.py:94} INFO - [0m14:41:21  Encountered an error:
+[2024-06-24T14:41:21.532+0000] {subprocess.py:94} INFO - [Errno 5] Input/output error: '/tmp/tmp3fztne3r/models/example/my_first_dbt_model.sql'
+[2024-06-24T14:41:21.547+0000] {subprocess.py:94} INFO - [0m14:41:21  Traceback (most recent call last):
+[2024-06-24T14:41:21.562+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+[2024-06-24T14:41:21.567+0000] {subprocess.py:94} INFO -     result, success = func(*args, **kwargs)
+[2024-06-24T14:41:21.570+0000] {subprocess.py:94} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.575+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+[2024-06-24T14:41:21.580+0000] {subprocess.py:94} INFO -     return func(*args, **kwargs)
+[2024-06-24T14:41:21.583+0000] {subprocess.py:94} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.586+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 218, in wrapper
+[2024-06-24T14:41:21.593+0000] {subprocess.py:94} INFO -     return func(*args, **kwargs)
+[2024-06-24T14:41:21.600+0000] {subprocess.py:94} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.603+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 247, in wrapper
+[2024-06-24T14:41:21.605+0000] {subprocess.py:94} INFO -     return func(*args, **kwargs)
+[2024-06-24T14:41:21.607+0000] {subprocess.py:94} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.610+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 294, in wrapper
+[2024-06-24T14:41:21.613+0000] {subprocess.py:94} INFO -     return func(*args, **kwargs)
+[2024-06-24T14:41:21.616+0000] {subprocess.py:94} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.618+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 320, in wrapper
+[2024-06-24T14:41:21.620+0000] {subprocess.py:94} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2024-06-24T14:41:21.623+0000] {subprocess.py:94} INFO -                           ^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.626+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/manifest.py", line 1898, in parse_manifest
+[2024-06-24T14:41:21.634+0000] {subprocess.py:94} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2024-06-24T14:41:21.637+0000] {subprocess.py:94} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.640+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/manifest.py", line 330, in get_full_manifest
+[2024-06-24T14:41:21.645+0000] {subprocess.py:94} INFO -     manifest = loader.load()
+[2024-06-24T14:41:21.649+0000] {subprocess.py:94} INFO -                ^^^^^^^^^^^^^
+[2024-06-24T14:41:21.652+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/manifest.py", line 377, in load
+[2024-06-24T14:41:21.654+0000] {subprocess.py:94} INFO -     file_reader.read_files()
+[2024-06-24T14:41:21.655+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 210, in read_files
+[2024-06-24T14:41:21.681+0000] {subprocess.py:94} INFO -     self.read_files_for_project(project, file_types)
+[2024-06-24T14:41:21.685+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 217, in read_files_for_project
+[2024-06-24T14:41:21.691+0000] {subprocess.py:94} INFO -     project_files[file_type_info["parser"]] = read_files_for_parser(
+[2024-06-24T14:41:21.693+0000] {subprocess.py:94} INFO -                                               ^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.696+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 165, in read_files_for_parser
+[2024-06-24T14:41:21.698+0000] {subprocess.py:94} INFO -     source_files = get_source_files(
+[2024-06-24T14:41:21.705+0000] {subprocess.py:94} INFO -                    ^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.707+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 154, in get_source_files
+[2024-06-24T14:41:21.710+0000] {subprocess.py:94} INFO -     file = load_source_file(fp, parse_file_type, project.project_name, saved_files)
+[2024-06-24T14:41:21.713+0000] {subprocess.py:94} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.715+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 82, in load_source_file
+[2024-06-24T14:41:21.728+0000] {subprocess.py:94} INFO -     file_contents = load_file_contents(path.absolute_path, strip=True)
+[2024-06-24T14:41:21.730+0000] {subprocess.py:94} INFO -                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.732+0000] {subprocess.py:94} INFO -   File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt_common/clients/system.py", line 173, in load_file_contents
+[2024-06-24T14:41:21.734+0000] {subprocess.py:94} INFO -     with open(path, "rb") as handle:
+[2024-06-24T14:41:21.736+0000] {subprocess.py:94} INFO -          ^^^^^^^^^^^^^^^^
+[2024-06-24T14:41:21.741+0000] {subprocess.py:94} INFO - OSError: [Errno 5] Input/output error: '/tmp/tmp3fztne3r/models/example/my_first_dbt_model.sql'
+[2024-06-24T14:41:21.744+0000] {subprocess.py:94} INFO - 
+[2024-06-24T14:41:24.657+0000] {subprocess.py:98} INFO - Command exited with return code 2
+[2024-06-24T14:41:24.663+0000] {local.py:254} INFO - 
+[2024-06-24T14:41:24.745+0000] {local.py:196} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/manifest/v12.json is above dbt-ol supported version 7. This might cause errors.
+[2024-06-24T14:41:24.753+0000] {local.py:349} INFO - Inlets: []
+[2024-06-24T14:41:24.755+0000] {local.py:350} INFO - Outlets: []
+[2024-06-24T14:41:24.760+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-06-24T14:41:29.063+0000] {dag.py:3954} INFO - Setting next_dagrun for ELT-PROJECT to None, run_after=None
+[2024-06-24T14:41:29.148+0000] {local.py:184} ERROR - [0m14:41:12  Running with dbt=1.8.3
+[0m14:41:18  Registered adapter: snowflake=1.8.3
+[0m14:41:21  Encountered an error:
+[Errno 5] Input/output error: '/tmp/tmp3fztne3r/models/example/my_first_dbt_model.sql'
+[0m14:41:21  Traceback (most recent call last):
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 320, in wrapper
+    ctx.obj["manifest"] = parse_manifest(
+                          ^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/manifest.py", line 1898, in parse_manifest
+    manifest = ManifestLoader.get_full_manifest(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/manifest.py", line 330, in get_full_manifest
+    manifest = loader.load()
+               ^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/manifest.py", line 377, in load
+    file_reader.read_files()
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 210, in read_files
+    self.read_files_for_project(project, file_types)
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 217, in read_files_for_project
+    project_files[file_type_info["parser"]] = read_files_for_parser(
+                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 165, in read_files_for_parser
+    source_files = get_source_files(
+                   ^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 154, in get_source_files
+    file = load_source_file(fp, parse_file_type, project.project_name, saved_files)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt/parser/read_files.py", line 82, in load_source_file
+    file_contents = load_file_contents(path.absolute_path, strip=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dbt_venv/lib/python3.12/site-packages/dbt_common/clients/system.py", line 173, in load_file_contents
+    with open(path, "rb") as handle:
+         ^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error: '/tmp/tmp3fztne3r/models/example/my_first_dbt_model.sql'
+
+[2024-06-24T14:41:29.212+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-24T14:41:29.247+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/base.py", line 264, in execute
+    self.build_and_run_cmd(context=context, cmd_flags=self.add_cmd_flags())
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 489, in build_and_run_cmd
+    result = self.run_command(cmd=dbt_cmd, env=env, context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 359, in run_command
+    self.handle_exception(result)
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 185, in handle_exception_subprocess
+    raise AirflowException(f"dbt command failed. The command returned a non-zero exit code {result.exit_code}.")
+airflow.exceptions.AirflowException: dbt command failed. The command returned a non-zero exit code 2.
+[2024-06-24T14:41:29.259+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ELT-PROJECT, task_id=transform.raw_customers.run, run_id=manual__2024-06-24T14:38:58.078871+00:00, execution_date=20240624T143858, start_date=20240624T144025, end_date=20240624T144129
+[2024-06-24T14:41:29.291+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 212 for task transform.raw_customers.run (dbt command failed. The command returned a non-zero exit code 2.; 2698)
+[2024-06-24T14:41:29.329+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-24T14:41:29.440+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-24T14:41:29.444+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

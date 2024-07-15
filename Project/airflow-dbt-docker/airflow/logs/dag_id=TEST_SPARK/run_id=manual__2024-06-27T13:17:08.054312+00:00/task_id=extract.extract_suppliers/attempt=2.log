@@ -1,0 +1,93 @@
+[2024-06-27T13:25:02.215+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-27T13:25:02.449+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_suppliers manual__2024-06-27T13:17:08.054312+00:00 [queued]>
+[2024-06-27T13:25:02.580+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: TEST_SPARK.extract.extract_suppliers manual__2024-06-27T13:17:08.054312+00:00 [queued]>
+[2024-06-27T13:25:02.582+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-06-27T13:25:02.735+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_suppliers> on 2024-06-27 13:17:08.054312+00:00
+[2024-06-27T13:25:02.855+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4386) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-27T13:25:02.868+0000] {standard_task_runner.py:63} INFO - Started process 4736 to run task
+[2024-06-27T13:25:02.930+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'TEST_SPARK', 'extract.extract_suppliers', 'manual__2024-06-27T13:17:08.054312+00:00', '--job-id', '406', '--raw', '--subdir', 'DAGS_FOLDER/elt-spark.py', '--cfg-path', '/tmp/tmpk0uxr8f8']
+[2024-06-27T13:25:03.004+0000] {standard_task_runner.py:91} INFO - Job 406: Subtask extract.extract_suppliers
+[2024-06-27T13:25:03.366+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-06-27T13:25:04.005+0000] {task_command.py:426} INFO - Running <TaskInstance: TEST_SPARK.extract.extract_suppliers manual__2024-06-27T13:17:08.054312+00:00 [running]> on host airflow-scheduler
+[2024-06-27T13:25:05.378+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='TEST_SPARK' AIRFLOW_CTX_TASK_ID='extract.extract_suppliers' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T13:17:08.054312+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-27T13:17:08.054312+00:00'
+[2024-06-27T13:25:05.384+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-27T13:27:21.922+0000] {logging_mixin.py:188} INFO - +----------+--------------------+--------------------+--------------------+--------------------+-------------+--------+----------+-----------+---------------+---------------+--------------------+
+|supplierID|         companyName|         contactName|        contactTitle|             address|         city|  region|postalCode|    country|          phone|            fax|            homePage|
++----------+--------------------+--------------------+--------------------+--------------------+-------------+--------+----------+-----------+---------------+---------------+--------------------+
+|        15|     Norske Meierier|        Beate Vileid|   Marketing Manager|        Hatlevegen 5|     Sandvika|     NaN|      1320|     Norway|    (0)2-953010|            NaN|                 NaN|
+|        16|   Bigfoot Breweries|       Cheryl Saylor|Regional Account ...|3400 - 8th Avenue...|         Bend|      OR|     97101|        USA| (503) 555-9931|            NaN|                 NaN|
+|        17|   Svensk Sjöföda AB|       Michael Björn|Sales Representative|   Brovallavägen 231|    Stockholm|     NaN|  S-123 45|     Sweden|   08-123 45 67|            NaN|                 NaN|
+|        18|Aux joyeux ecclés...|      Guylène Nodier|       Sales Manager|203 Rue des Franc...|        Paris|     NaN|     75004|     France|(1) 03.83.00.68|(1) 03.83.00.62|                 NaN|
+|        19|New England Seafo...|       Robb Merchant|Wholesale Account...|Order Processing ...|       Boston|      MA|     02134|        USA| (617) 555-3267| (617) 555-3389|                 NaN|
+|        20|        Leka Trading|        Chandra Leka|               Owner|471 Serangoon Loo...|    Singapore|     NaN|      0512|  Singapore|       555-8787|            NaN|                 NaN|
+|        21|          Lyngbysild|      Niels Petersen|       Sales Manager|Lyngbysild Fiskeb...|       Lyngby|     NaN|      2800|    Denmark|       43844108|       43844115|                 NaN|
+|        22| Zaanse Snoepfabriek|         Dirk Luchte|  Accounting Manager|  Verkoop Rijnweg 22|      Zaandam|     NaN|   9999 ZZ|Netherlands|   (12345) 1212|   (12345) 1210|                 NaN|
+|        23|           Karkki Oy|      Anne Heikkonen|     Product Manager|        Valtakatu 12| Lappeenranta|     NaN|     53120|    Finland|    (953) 10956|            NaN|                 NaN|
+|        24|          G'day Mate|     Wendy Mackenzie|Sales Representative|170 Prince Edward...|       Sydney|     NSW|      2042|  Australia|  (02) 555-5914|  (02) 555-4873|G'day Mate (on th...|
+|        25|           Ma Maison|     Jean-Guy Lauzon|   Marketing Manager|2960 Rue St. Laurent|     Montréal|  Québec|   H1J 1C3|     Canada| (514) 555-9022|            NaN|                 NaN|
+|        26|Pasta Buttini s.r.l.|    Giovanni Giudici| Order Administrator|Via dei Gelsomini...|      Salerno|     NaN|     84100|      Italy|  (089) 6547665|  (089) 6547667|                 NaN|
+|        27|  Escargots Nouveaux|      Marie Delamare|       Sales Manager|    22 rue H. Voiron|     Montceau|     NaN|     71300|     France|    85.57.00.07|            NaN|                 NaN|
+|        28|        Gai pâturage|          Eliane Noz|Sales Representative|Bat. B 3 rue des ...|       Annecy|     NaN|     74000|     France|    38.76.98.06|    38.76.98.58|                 NaN|
+|        29|    Forêts d'érables|      Chantal Goulet|  Accounting Manager|    148 rue Chasseur|Ste-Hyacinthe|  Québec|   J2S 7S8|     Canada| (514) 555-2955| (514) 555-2921|                 NaN|
+|         1|      Exotic Liquids|    Charlotte Cooper|  Purchasing Manager|      49 Gilbert St.|       London|     NaN|   EC1 4SD|         UK| (171) 555-2222|            NaN|                 NaN|
+|         2|New Orleans Cajun...|       Shelley Burke| Order Administrator|      P.O. Box 78934|  New Orleans|      LA|     70117|        USA| (100) 555-4822|            NaN|         #CAJUN.HTM#|
+|         3|Grandma Kelly's H...|       Regina Murphy|Sales Representative|      707 Oxford Rd.|    Ann Arbor|      MI|     48104|        USA| (313) 555-5735| (313) 555-3349|                 NaN|
+|         4|       Tokyo Traders|        Yoshi Nagase|   Marketing Manager|9-8 Sekimai Musas...|        Tokyo|     NaN|       100|      Japan| (03) 3555-5011|            NaN|                 NaN|
+|         5|Cooperativa de Qu...|Antonio del Valle...|Export Administrator|   Calle del Rosal 4|       Oviedo|Asturias|     33007|      Spain| (98) 598 76 54|            NaN|                 NaN|
++----------+--------------------+--------------------+--------------------+--------------------+-------------+--------+----------+-----------+---------------+---------------+--------------------+
+only showing top 20 rows
+[2024-06-27T13:27:21.925+0000] {logging_mixin.py:188} INFO - None
+[2024-06-27T13:27:21.927+0000] {python.py:237} INFO - Done. Returned value was: DataFrame[supplierID: bigint, companyName: string, contactName: string, contactTitle: string, address: string, city: string, region: string, postalCode: string, country: string, phone: string, fax: string, homePage: string]
+[2024-06-27T13:27:22.040+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-27T13:27:22.106+0000] {xcom.py:675} ERROR - Object of type DataFrame is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your airflow config or make sure to decorate your object with attr.
+[2024-06-27T13:27:22.148+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/serialization/serde.py", line 189, in serialize
+    raise TypeError(f"cannot serialize object of type {cls}")
+TypeError: cannot serialize object of type <class 'pyspark.sql.dataframe.DataFrame'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 486, in _execute_task
+    task_instance.xcom_push(key=XCOM_RETURN_KEY, value=xcom_value, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-06-27T13:27:22.200+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=TEST_SPARK, task_id=extract.extract_suppliers, run_id=manual__2024-06-27T13:17:08.054312+00:00, execution_date=20240627T131708, start_date=20240627T132502, end_date=20240627T132722
+[2024-06-27T13:27:22.242+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 406 for task extract.extract_suppliers (Object of type DataFrame is not JSON serializable; 4736)
+[2024-06-27T13:27:22.265+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-27T13:27:22.332+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-27T13:27:22.338+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

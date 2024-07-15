@@ -1,0 +1,20 @@
+[2024-07-14T03:47:38.248+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-14T03:47:38.299+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.wait_until_all_connections_closed manual__2024-07-14T03:47:05.410676+00:00 [queued]>
+[2024-07-14T03:47:38.328+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.wait_until_all_connections_closed manual__2024-07-14T03:47:05.410676+00:00 [queued]>
+[2024-07-14T03:47:38.329+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-14T03:47:38.360+0000] {taskinstance.py:2330} INFO - Executing <Task(TimeDeltaSensor): wait_until_all_connections_closed> on 2024-07-14 03:47:05.410676+00:00
+[2024-07-14T03:47:38.376+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=8476) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-14T03:47:38.379+0000] {standard_task_runner.py:63} INFO - Started process 8478 to run task
+[2024-07-14T03:47:38.377+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'wait_until_all_connections_closed', 'manual__2024-07-14T03:47:05.410676+00:00', '--job-id', '634', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpac7gshm3']
+[2024-07-14T03:47:38.381+0000] {standard_task_runner.py:91} INFO - Job 634: Subtask wait_until_all_connections_closed
+[2024-07-14T03:47:38.422+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-14T03:47:38.519+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.wait_until_all_connections_closed manual__2024-07-14T03:47:05.410676+00:00 [running]> on host airflow-scheduler
+[2024-07-14T03:47:38.772+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='wait_until_all_connections_closed' AIRFLOW_CTX_EXECUTION_DATE='2024-07-14T03:47:05.410676+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-14T03:47:05.410676+00:00'
+[2024-07-14T03:47:38.775+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-14T03:47:38.777+0000] {time_delta.py:51} INFO - Checking if the time (2024-07-14 03:47:15.410676+00:00) has come
+[2024-07-14T03:47:38.779+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-07-14T03:47:38.780+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-14T03:47:38.825+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ELT-PROJECT, task_id=wait_until_all_connections_closed, run_id=manual__2024-07-14T03:47:05.410676+00:00, execution_date=20240714T034705, start_date=20240714T034738, end_date=20240714T034738
+[2024-07-14T03:47:38.919+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-14T03:47:39.208+0000] {taskinstance.py:3503} INFO - 11 downstream tasks scheduled from follow-on schedule check
+[2024-07-14T03:47:39.213+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,124 @@
+[2024-07-13T15:28:00.219+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-13T15:28:00.258+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.transform.raw_orders.run manual__2024-07-13T15:21:44.430274+00:00 [queued]>
+[2024-07-13T15:28:00.275+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.transform.raw_orders.run manual__2024-07-13T15:21:44.430274+00:00 [queued]>
+[2024-07-13T15:28:00.276+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-07-13T15:28:00.295+0000] {taskinstance.py:2330} INFO - Executing <Task(DbtRunLocalOperator): transform.raw_orders.run> on 2024-07-13 15:21:44.430274+00:00
+[2024-07-13T15:28:00.306+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1914) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-13T15:28:00.307+0000] {standard_task_runner.py:63} INFO - Started process 1916 to run task
+[2024-07-13T15:28:00.305+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'transform.raw_orders.run', 'manual__2024-07-13T15:21:44.430274+00:00', '--job-id', '448', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmp4i_0kwed']
+[2024-07-13T15:28:00.309+0000] {standard_task_runner.py:91} INFO - Job 448: Subtask transform.raw_orders.run
+[2024-07-13T15:28:00.354+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-13T15:28:00.398+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.transform.raw_orders.run manual__2024-07-13T15:21:44.430274+00:00 [running]> on host airflow-scheduler
+[2024-07-13T15:28:00.498+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='transform.raw_orders.run' AIRFLOW_CTX_EXECUTION_DATE='2024-07-13T15:21:44.430274+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-13T15:21:44.430274+00:00'
+[2024-07-13T15:28:00.499+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-13T15:28:00.502+0000] {local.py:174} INFO - Could not import dbtRunner. Falling back to subprocess for invoking dbt.
+[2024-07-13T15:28:00.504+0000] {local.py:292} INFO - Cloning project to writable temp directory /tmp/tmpxcvg2ue1 from /opt/airflow/dags/dbt/dbt_project
+[2024-07-13T15:28:00.512+0000] {local.py:303} INFO - Partial parse is enabled and the latest partial parse file is /tmp/cosmos/ELT-PROJECT__transform/target/partial_parse.msgpack
+[2024-07-13T15:28:00.539+0000] {base.py:84} INFO - Using connection ID 'snow_conn' for task execution.
+[2024-07-13T15:28:00.540+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-07-13T15:28:00.540+0000] {config.py:298} INFO - Profile caching is enable.
+[2024-07-13T15:28:00.542+0000] {config.py:272} INFO - Profile found in cache using profile: /tmp/cosmos/profile/a0017dab0633177292578162811b91dcb9c56d6e54017e9660056cc364a762ad/profiles.yml.
+[2024-07-13T15:28:00.543+0000] {local.py:247} INFO - Trying to run the command:
+ ['/opt/airflow/dbt_venv/bin/dbt', 'deps', '--project-dir', '/tmp/tmpxcvg2ue1', '--profiles-dir', '/tmp/cosmos/profile/a0017dab0633177292578162811b91dcb9c56d6e54017e9660056cc364a762ad', '--profile', 'dbt_project', '--target', 'dev']
+From /tmp/tmpxcvg2ue1
+[2024-07-13T15:28:00.544+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-07-13T15:28:00.545+0000] {subprocess.py:73} INFO - Running command: ['/opt/airflow/dbt_venv/bin/dbt', 'deps', '--project-dir', '/tmp/tmpxcvg2ue1', '--profiles-dir', '/tmp/cosmos/profile/a0017dab0633177292578162811b91dcb9c56d6e54017e9660056cc364a762ad', '--profile', 'dbt_project', '--target', 'dev']
+[2024-07-13T15:28:00.556+0000] {subprocess.py:84} INFO - Command output:
+[2024-07-13T15:28:02.681+0000] {subprocess.py:94} INFO - [0m15:28:02  Running with dbt=1.8.3
+[2024-07-13T15:28:03.912+0000] {subprocess.py:94} INFO - [0m15:28:03  Updating lock file in file path: /tmp/tmpxcvg2ue1/package-lock.yml
+[2024-07-13T15:28:03.920+0000] {subprocess.py:94} INFO - [0m15:28:03  Installing dbt-labs/dbt_utils
+[2024-07-13T15:28:04.753+0000] {subprocess.py:94} INFO - [0m15:28:04  Installed from version 0.8.6
+[2024-07-13T15:28:04.754+0000] {subprocess.py:94} INFO - [0m15:28:04  Updated version available: 1.2.0
+[2024-07-13T15:28:04.755+0000] {subprocess.py:94} INFO - [0m15:28:04
+[2024-07-13T15:28:04.756+0000] {subprocess.py:94} INFO - [0m15:28:04  Updates available for packages: ['dbt-labs/dbt_utils']
+[2024-07-13T15:28:04.757+0000] {subprocess.py:94} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-07-13T15:28:06.140+0000] {subprocess.py:98} INFO - Command exited with return code 0
+[2024-07-13T15:28:06.142+0000] {local.py:254} INFO - Update your versions in packages.yml, then run dbt deps
+[2024-07-13T15:28:06.143+0000] {local.py:247} INFO - Trying to run the command:
+ ['/opt/airflow/dbt_venv/bin/dbt', 'run', '--models', 'raw_orders', '--project-dir', '/tmp/tmpxcvg2ue1', '--profiles-dir', '/tmp/cosmos/profile/a0017dab0633177292578162811b91dcb9c56d6e54017e9660056cc364a762ad', '--profile', 'dbt_project', '--target', 'dev']
+From /tmp/tmpxcvg2ue1
+[2024-07-13T15:28:06.144+0000] {subprocess.py:60} INFO - Tmp dir root location: 
+ /tmp
+[2024-07-13T15:28:06.145+0000] {subprocess.py:73} INFO - Running command: ['/opt/airflow/dbt_venv/bin/dbt', 'run', '--models', 'raw_orders', '--project-dir', '/tmp/tmpxcvg2ue1', '--profiles-dir', '/tmp/cosmos/profile/a0017dab0633177292578162811b91dcb9c56d6e54017e9660056cc364a762ad', '--profile', 'dbt_project', '--target', 'dev']
+[2024-07-13T15:28:06.157+0000] {subprocess.py:84} INFO - Command output:
+[2024-07-13T15:28:08.328+0000] {subprocess.py:94} INFO - [0m15:28:08  Running with dbt=1.8.3
+[2024-07-13T15:28:08.833+0000] {subprocess.py:94} INFO - [0m15:28:08  Registered adapter: snowflake=1.8.3
+[2024-07-13T15:28:10.086+0000] {subprocess.py:94} INFO - [0m15:28:10  Found 20 models, 27 data tests, 11 sources, 684 macros
+[2024-07-13T15:28:10.090+0000] {subprocess.py:94} INFO - [0m15:28:10
+[2024-07-13T15:28:17.944+0000] {subprocess.py:94} INFO - [0m15:28:17  Concurrency: 1 threads (target='dev')
+[2024-07-13T15:28:17.946+0000] {subprocess.py:94} INFO - [0m15:28:17
+[2024-07-13T15:28:17.989+0000] {subprocess.py:94} INFO - [0m15:28:17  1 of 1 START sql table model raw.raw_orders .................................... [RUN]
+[2024-07-13T15:28:20.089+0000] {subprocess.py:94} INFO - [0m15:28:20  1 of 1 ERROR creating sql table model raw.raw_orders ........................... [[31mERROR[0m in 2.10s]
+[2024-07-13T15:28:20.095+0000] {subprocess.py:94} INFO - [0m15:28:20
+[2024-07-13T15:28:20.096+0000] {subprocess.py:94} INFO - [0m15:28:20  Finished running 1 table model in 0 hours 0 minutes and 10.00 seconds (10.00s).
+[2024-07-13T15:28:20.230+0000] {subprocess.py:94} INFO - [0m15:28:20
+[2024-07-13T15:28:20.232+0000] {subprocess.py:94} INFO - [0m15:28:20  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-07-13T15:28:20.233+0000] {subprocess.py:94} INFO - [0m15:28:20
+[2024-07-13T15:28:20.234+0000] {subprocess.py:94} INFO - [0m15:28:20    Database Error in model raw_orders (models/staging/raw_orders.sql)
+[2024-07-13T15:28:20.235+0000] {subprocess.py:94} INFO -   100035 (22007): Timestamp 'NaN' is not recognized
+[2024-07-13T15:28:20.236+0000] {subprocess.py:94} INFO -   compiled Code at target/run/dbt_project/models/staging/raw_orders.sql
+[2024-07-13T15:28:20.237+0000] {subprocess.py:94} INFO - [0m15:28:20
+[2024-07-13T15:28:20.238+0000] {subprocess.py:94} INFO - [0m15:28:20  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-07-13T15:28:22.561+0000] {subprocess.py:98} INFO - Command exited with return code 1
+[2024-07-13T15:28:22.564+0000] {local.py:254} INFO - [0m15:28:20  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-07-13T15:28:22.963+0000] {local.py:196} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/manifest/v12.json is above dbt-ol supported version 7. This might cause errors.
+[2024-07-13T15:28:22.964+0000] {local.py:196} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/run-results/v6.json is above dbt-ol supported version 5. This might cause errors.
+[2024-07-13T15:28:22.978+0000] {local.py:349} INFO - Inlets: []
+[2024-07-13T15:28:22.980+0000] {local.py:350} INFO - Outlets: []
+[2024-07-13T15:28:22.982+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-13T15:28:23.040+0000] {dag.py:3954} INFO - Setting next_dagrun for ELT-PROJECT to None, run_after=None
+[2024-07-13T15:28:23.105+0000] {local.py:184} ERROR - [0m15:28:08  Running with dbt=1.8.3
+[0m15:28:08  Registered adapter: snowflake=1.8.3
+[0m15:28:10  Found 20 models, 27 data tests, 11 sources, 684 macros
+[0m15:28:10
+[0m15:28:17  Concurrency: 1 threads (target='dev')
+[0m15:28:17
+[0m15:28:17  1 of 1 START sql table model raw.raw_orders .................................... [RUN]
+[0m15:28:20  1 of 1 ERROR creating sql table model raw.raw_orders ........................... [[31mERROR[0m in 2.10s]
+[0m15:28:20
+[0m15:28:20  Finished running 1 table model in 0 hours 0 minutes and 10.00 seconds (10.00s).
+[0m15:28:20
+[0m15:28:20  [31mCompleted with 1 error and 0 warnings:[0m
+[0m15:28:20
+[0m15:28:20    Database Error in model raw_orders (models/staging/raw_orders.sql)
+  100035 (22007): Timestamp 'NaN' is not recognized
+  compiled Code at target/run/dbt_project/models/staging/raw_orders.sql
+[0m15:28:20
+[0m15:28:20  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-07-13T15:28:23.125+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-13T15:28:23.154+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/base.py", line 270, in execute
+    self.build_and_run_cmd(context=context, cmd_flags=self.add_cmd_flags())
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 489, in build_and_run_cmd
+    result = self.run_command(cmd=dbt_cmd, env=env, context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 359, in run_command
+    self.handle_exception(result)
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 185, in handle_exception_subprocess
+    raise AirflowException(f"dbt command failed. The command returned a non-zero exit code {result.exit_code}.")
+airflow.exceptions.AirflowException: dbt command failed. The command returned a non-zero exit code 1.
+[2024-07-13T15:28:23.188+0000] {taskinstance.py:225} INFO - Setting task transform.raw_orders.test to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.189+0000] {taskinstance.py:225} INFO - Setting task transform.fact_orders.run to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.191+0000] {taskinstance.py:225} INFO - Setting task transform.fact_orders.test to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.192+0000] {taskinstance.py:225} INFO - Setting task transform.fact_order_details.run to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.192+0000] {taskinstance.py:225} INFO - Setting task transform.fact_order_details.test to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.193+0000] {taskinstance.py:225} INFO - Setting task transform.gross_revenue_run to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.195+0000] {taskinstance.py:225} INFO - Setting task transform.best_employee_run to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.197+0000] {taskinstance.py:225} INFO - Setting task transform.popular_product_categories_run to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.198+0000] {taskinstance.py:225} INFO - Setting task end to SKIPPED due to dag's `fail_stop` setting.
+[2024-07-13T15:28:23.200+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=ELT-PROJECT, task_id=transform.raw_orders.run, run_id=manual__2024-07-13T15:21:44.430274+00:00, execution_date=20240713T152144, start_date=20240713T152800, end_date=20240713T152823
+[2024-07-13T15:28:23.240+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 448 for task transform.raw_orders.run (dbt command failed. The command returned a non-zero exit code 1.; 1916)
+[2024-07-13T15:28:23.291+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-13T15:28:23.402+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-13T15:28:23.423+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

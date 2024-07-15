@@ -1,0 +1,109 @@
+[2024-07-13T14:27:21.402+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-13T14:27:21.480+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_suppliers scheduled__2024-07-12T00:00:00+00:00 [queued]>
+[2024-07-13T14:27:21.511+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_suppliers scheduled__2024-07-12T00:00:00+00:00 [queued]>
+[2024-07-13T14:27:21.522+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-13T14:27:21.611+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_suppliers> on 2024-07-12 00:00:00+00:00
+[2024-07-13T14:27:21.635+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4356) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-13T14:27:21.643+0000] {standard_task_runner.py:63} INFO - Started process 4380 to run task
+[2024-07-13T14:27:21.652+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'extract.extract_suppliers', 'scheduled__2024-07-12T00:00:00+00:00', '--job-id', '315', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpwcxp7lpa']
+[2024-07-13T14:27:21.658+0000] {standard_task_runner.py:91} INFO - Job 315: Subtask extract.extract_suppliers
+[2024-07-13T14:27:21.789+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-13T14:27:22.113+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.extract.extract_suppliers scheduled__2024-07-12T00:00:00+00:00 [running]> on host airflow-scheduler
+[2024-07-13T14:27:22.948+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='extract.extract_suppliers' AIRFLOW_CTX_EXECUTION_DATE='2024-07-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-12T00:00:00+00:00'
+[2024-07-13T14:27:22.956+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-13T14:27:23.045+0000] {base.py:84} INFO - Using connection ID 'post_conn' for task execution.
+[2024-07-13T14:27:23.334+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-13T14:27:23.337+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/elt.py", line 49, in extract
+    return extract_func(
+           ^^^^^^^^^^^^^
+  File "/opt/airflow/dags/el_module/extractors.py", line 11, in extract_func
+    ).get_conn()
+      ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/postgres/hooks/postgres.py", line 175, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  password authentication failed for user 'dataninja'
+connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+[2024-07-13T14:27:24.011+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ELT-PROJECT, task_id=extract.extract_suppliers, run_id=scheduled__2024-07-12T00:00:00+00:00, execution_date=20240712T000000, start_date=20240713T142721, end_date=20240713T142724
+[2024-07-13T14:27:24.046+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 315 for task extract.extract_suppliers (connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  password authentication failed for user 'dataninja'
+connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+; 4380)
+[2024-07-13T14:27:24.083+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-13T14:27:24.111+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-07-14T03:59:59.027+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-14T03:59:59.216+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_suppliers scheduled__2024-07-12T00:00:00+00:00 [queued]>
+[2024-07-14T03:59:59.273+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_suppliers scheduled__2024-07-12T00:00:00+00:00 [queued]>
+[2024-07-14T03:59:59.274+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-14T03:59:59.340+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_suppliers> on 2024-07-12 00:00:00+00:00
+[2024-07-14T03:59:59.368+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'extract.extract_suppliers', 'scheduled__2024-07-12T00:00:00+00:00', '--job-id', '837', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpqnt9xkds']
+[2024-07-14T03:59:59.373+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=10062) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-14T03:59:59.385+0000] {standard_task_runner.py:91} INFO - Job 837: Subtask extract.extract_suppliers
+[2024-07-14T03:59:59.385+0000] {standard_task_runner.py:63} INFO - Started process 10086 to run task
+[2024-07-14T03:59:59.453+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-14T03:59:59.680+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.extract.extract_suppliers scheduled__2024-07-12T00:00:00+00:00 [running]> on host airflow-scheduler
+[2024-07-14T04:00:00.083+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='extract.extract_suppliers' AIRFLOW_CTX_EXECUTION_DATE='2024-07-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-12T00:00:00+00:00'
+[2024-07-14T04:00:00.091+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-14T04:00:00.221+0000] {base.py:84} INFO - Using connection ID 'post_conn' for task execution.
+[2024-07-14T04:00:00.688+0000] {python.py:237} INFO - Done. Returned value was:     supplierID  ...                                           homePage
+0           15  ...                                                NaN
+1           16  ...                                                NaN
+2           17  ...                                                NaN
+3           18  ...                                                NaN
+4           19  ...                                                NaN
+5           20  ...                                                NaN
+6           21  ...                                                NaN
+7           22  ...                                                NaN
+8           23  ...                                                NaN
+9           24  ...  G'day Mate (on the World Wide Web)#http://www....
+10          25  ...                                                NaN
+11          26  ...                                                NaN
+12          27  ...                                                NaN
+13          28  ...                                                NaN
+14          29  ...                                                NaN
+15           1  ...                                                NaN
+16           2  ...                                        #CAJUN.HTM#
+17           3  ...                                                NaN
+18           4  ...                                                NaN
+19           5  ...                                                NaN
+20           6  ...  Mayumi's (on the World Wide Web)#http://www.mi...
+21           7  ...                                                NaN
+22           8  ...                                                NaN
+23           9  ...                                                NaN
+24          10  ...                                                NaN
+25          11  ...                                                NaN
+26          12  ...  Plutzer (on the World Wide Web)#http://www.mic...
+27          13  ...                                                NaN
+28          14  ...                                     #FORMAGGI.HTM#
+
+[29 rows x 12 columns]
+[2024-07-14T04:00:00.767+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-14T04:00:01.573+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ELT-PROJECT, task_id=extract.extract_suppliers, run_id=scheduled__2024-07-12T00:00:00+00:00, execution_date=20240712T000000, start_date=20240714T035959, end_date=20240714T040001
+[2024-07-14T04:00:01.752+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-14T04:00:01.810+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

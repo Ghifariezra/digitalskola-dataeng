@@ -1,0 +1,131 @@
+[2024-07-13T14:25:53.061+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-13T14:25:53.191+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_territories scheduled__2024-06-30T00:00:00+00:00 [queued]>
+[2024-07-13T14:25:53.248+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_territories scheduled__2024-06-30T00:00:00+00:00 [queued]>
+[2024-07-13T14:25:53.250+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-13T14:25:53.337+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_territories> on 2024-06-30 00:00:00+00:00
+[2024-07-13T14:25:53.377+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3898) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-13T14:25:53.392+0000] {standard_task_runner.py:63} INFO - Started process 3935 to run task
+[2024-07-13T14:25:53.375+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'extract.extract_territories', 'scheduled__2024-06-30T00:00:00+00:00', '--job-id', '184', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmprq7ozvbh']
+[2024-07-13T14:25:53.413+0000] {standard_task_runner.py:91} INFO - Job 184: Subtask extract.extract_territories
+[2024-07-13T14:25:53.554+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-13T14:25:54.131+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.extract.extract_territories scheduled__2024-06-30T00:00:00+00:00 [running]> on host airflow-scheduler
+[2024-07-13T14:25:54.692+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='extract.extract_territories' AIRFLOW_CTX_EXECUTION_DATE='2024-06-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-30T00:00:00+00:00'
+[2024-07-13T14:25:54.699+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-13T14:25:54.763+0000] {base.py:84} INFO - Using connection ID 'post_conn' for task execution.
+[2024-07-13T14:25:55.023+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-13T14:25:55.027+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/elt.py", line 49, in extract
+    return extract_func(
+           ^^^^^^^^^^^^^
+  File "/opt/airflow/dags/el_module/extractors.py", line 11, in extract_func
+    ).get_conn()
+      ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/postgres/hooks/postgres.py", line 175, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  password authentication failed for user 'dataninja'
+connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+[2024-07-13T14:25:55.130+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ELT-PROJECT, task_id=extract.extract_territories, run_id=scheduled__2024-06-30T00:00:00+00:00, execution_date=20240630T000000, start_date=20240713T142553, end_date=20240713T142555
+[2024-07-13T14:25:55.175+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 184 for task extract.extract_territories (connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  password authentication failed for user 'dataninja'
+connection to server at "ep-bold-forest-89569418.ap-southeast-1.aws.neon.tech" (13.228.184.177), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+; 3935)
+[2024-07-13T14:25:55.253+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-13T14:25:55.306+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-07-14T03:58:35.256+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-14T03:58:35.463+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_territories scheduled__2024-06-30T00:00:00+00:00 [queued]>
+[2024-07-14T03:58:35.557+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT-PROJECT.extract.extract_territories scheduled__2024-06-30T00:00:00+00:00 [queued]>
+[2024-07-14T03:58:35.560+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-14T03:58:35.744+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): extract.extract_territories> on 2024-06-30 00:00:00+00:00
+[2024-07-14T03:58:35.786+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=9586) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-14T03:58:35.806+0000] {standard_task_runner.py:63} INFO - Started process 9638 to run task
+[2024-07-14T03:58:35.787+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ELT-PROJECT', 'extract.extract_territories', 'scheduled__2024-06-30T00:00:00+00:00', '--job-id', '716', '--raw', '--subdir', 'DAGS_FOLDER/elt.py', '--cfg-path', '/tmp/tmpv39_vz4l']
+[2024-07-14T03:58:35.819+0000] {standard_task_runner.py:91} INFO - Job 716: Subtask extract.extract_territories
+[2024-07-14T03:58:35.925+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-07-14T03:58:36.176+0000] {task_command.py:426} INFO - Running <TaskInstance: ELT-PROJECT.extract.extract_territories scheduled__2024-06-30T00:00:00+00:00 [running]> on host airflow-scheduler
+[2024-07-14T03:58:36.922+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Data-Ninja' AIRFLOW_CTX_DAG_ID='ELT-PROJECT' AIRFLOW_CTX_TASK_ID='extract.extract_territories' AIRFLOW_CTX_EXECUTION_DATE='2024-06-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-30T00:00:00+00:00'
+[2024-07-14T03:58:36.944+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-14T03:58:37.008+0000] {base.py:84} INFO - Using connection ID 'post_conn' for task execution.
+[2024-07-14T03:58:37.277+0000] {python.py:237} INFO - Done. Returned value was:     territoryID territoryDescription  regionID
+0          1581             Westboro         1
+1          1730              Bedford         1
+2          1833            Georgetow         1
+3          2116               Boston         1
+4          2139            Cambridge         1
+5          2184            Braintree         1
+6          2903           Providence         1
+7          3049               Hollis         3
+8          3801           Portsmouth         3
+9          6897               Wilton         1
+10         7960           Morristown         1
+11         8837               Edison         1
+12        10019              NewYork         1
+13        10038              NewYork         1
+14        11747             Mellvile         1
+15        14450             Fairport         1
+16        19428         Philadelphia         3
+17        19713               Neward         1
+18        20852            Rockville         1
+19        27403           Greensboro         1
+20        27511                 Cary         1
+21        29202             Columbia         4
+22        30346              Atlanta         4
+23        31406             Savannah         4
+24        32859              Orlando         4
+25        33607                Tampa         4
+26        40222           Louisville         1
+27        44122            Beachwood         3
+28        45839              Findlay         3
+29        48075           Southfield         3
+30        48084                 Troy         3
+31        48304      BloomfieldHills         3
+32        53404               Racine         3
+33        55113            Roseville         3
+34        55439          Minneapolis         3
+35        60179       HoffmanEstates         2
+36        60601              Chicago         2
+37        72716          Bentonville         4
+38        75234               Dallas         4
+39        78759               Austin         4
+40        80202               Denver         2
+41        80909      ColoradoSprings         2
+42        85014              Phoenix         2
+43        85251           Scottsdale         2
+44        90405          SantaMonica         2
+45        94025            MenloPark         2
+46        94105         SanFrancisco         2
+47        95008             Campbell         2
+48        95054           SantaClara         2
+49        95060            SantaCruz         2
+50        98004             Bellevue         2
+51        98052              Redmond         2
+52        98104              Seattle         2
+[2024-07-14T03:58:37.355+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-14T03:58:38.461+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ELT-PROJECT, task_id=extract.extract_territories, run_id=scheduled__2024-06-30T00:00:00+00:00, execution_date=20240630T000000, start_date=20240714T035835, end_date=20240714T035838
+[2024-07-14T03:58:38.570+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-14T03:58:38.612+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
