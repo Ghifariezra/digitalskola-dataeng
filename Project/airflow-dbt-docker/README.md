@@ -7,7 +7,7 @@
 ## Pre-requisites
 1. Build `docker image` for Airflow
 ```bash
-docker build -t dataninja/airflow -f ./docker/Dockerfile.airflow .
+docker build -t dataninja/airflow -f ./docker-batch/Dockerfile.airflow .
 ```
 2. Create `networks` for Docker
 ```bash
